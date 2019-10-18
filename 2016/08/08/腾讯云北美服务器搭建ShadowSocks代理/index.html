@@ -11,7 +11,7 @@
 
     <title>
         
-        Hello World - InfinityMiao的博客 | InfinityMiao&#39;s Blog
+        腾讯云北美服务器搭建ShadowSocks代理 - InfinityMiao的博客 | InfinityMiao&#39;s Blog
         
     </title>
 
@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    
 </div>
     
 </div>
@@ -120,11 +120,17 @@
 
 <div class="post-container">
     <div class="post-title">
-        Hello World
+        腾讯云北美服务器搭建ShadowSocks代理
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2019-10-18 00:28:36</span></span>
+        <span class="attr">发布于：<span>2016-08-08 19:15:01</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#ShadowSocks" title="ShadowSocks">ShadowSocks</a>
+        <span>/</span>
+        
         
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
@@ -132,19 +138,30 @@
 </span>
     </div>
     <div class="post-content ">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <p>注：本教程适合centos系列和red hat系列</p>
+<p>登陆SSH<br>新的VPS可以先升级</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">yum -y update</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>有些VPS 没有wget<br>这种要先装</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y <span class="keyword">install</span> wget</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>输入以下命令：（可以复制）</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/teddysun/shadowsocks_install/master/shadowsocks.<span class="keyword">sh</span></span><br><span class="line">chmod +<span class="keyword">x</span> shadowsocks.<span class="keyword">sh</span></span><br><span class="line">./shadowsocks.<span class="keyword">sh</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> | tee shadowsocks.<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>第一行是下载命令，下载东西，第二行是修改权限，第三行是安装命令</p>
+<p>下面是按照配置图</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">配置：</span><br><span class="line">密码：（默认是teddysun.com）</span><br><span class="line">端口：默认是<span class="number">8989</span></span><br><span class="line">然后按任意键安装，退出按 Ctrl+c</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>安装完成会有一个配置</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Congratulations, shadowsocks install completed!Your Server IP:  ***** VPS的IP地址Your Server Port:  *****  你刚才设置的端口Your Password:  ****  你刚才设置的密码Your Local IP:  <span class="number">127.0</span>.<span class="number">0.1</span> Your Local Port:  <span class="number">1080</span> Your Encryption <span class="function"><span class="keyword">Method</span>:</span>  aes-<span class="number">256</span>-cfb Welcome <span class="keyword">to</span> visit:https:<span class="comment">//teddysun.com/342.htmlEnjoy it!</span></span><br></pre></td></tr></table></figure>
+
+<p>然后即可以使用</p>
+<p>卸载方法：</p>
+<p>使用 root 用户登录，运行以下命令：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./shadowsocksR<span class="selector-class">.sh</span> uninstall</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后即已后台启动 ShadowsocksR ，运行：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/etc/i</span>nit.d<span class="regexp">/shadowsocks status</span></span><br></pre></td></tr></table></figure>
 
         
         <br />

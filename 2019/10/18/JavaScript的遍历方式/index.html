@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="InfinityMiao的博客">
+    <meta name="keyword"  content="腾讯">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        JavaScript的遍历方式 - InfinityMiao的博客 | InfinityMiao&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> sometimes code， sometimes design </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>InfinityMiao</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-for循环"><span class="toc-text">1.for循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-for-in"><span class="toc-text">2.for in</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-for-of"><span class="toc-text">3.for of</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-for-each"><span class="toc-text">4.for each</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> sometimes code， sometimes design </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        JavaScript的遍历方式
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-10-18 23:33:12</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>之前在写用nodejs构建的网站后端时，理所当然的用到了遍历，js的遍历方式有很多种，先记下用到了的遍历方式以及其中遇到的坑。</p>
+<h2 id="1-for循环"><a href="#1-for循环" class="headerlink" title="1.for循环"></a>1.for循环</h2><p>for循环的用法基本与c/c++类似，除了获得数组长度的方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(array[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到目前为止，在使用for循环的代码中没有出现任何bug，因此推荐以后使用最传统的for循环。而其他的几中遍历方式多多少少都会出现问题，估计是nodejs的任务处理逻辑使得对数组对象进行遍历时出现了指针错误？不太清楚，待以后研究。</p>
+<h2 id="2-for-in"><a href="#2-for-in" class="headerlink" title="2.for in"></a>2.for in</h2><p> for in循环不仅可以遍历数组，还可以遍历对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> num <span class="keyword">in</span> array)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因为之前python写的比较多，所以本来对for in还是很有好感的，因此最开始就是用的for in对数组进行的遍历。但是当我在使用for in遍历一个长度为500的二维数组时，在数组的最后一个位置并没有得到正确的变量，而是一个undefined，即array[499] = undefined，这个bug让我找了很久，也是我遇到的第一个不是我自己造成的坑(＃｀д´)ﾉ，然而令我没想到的是js的遍历还有更多的坑。</p>
+<h2 id="3-for-of"><a href="#3-for-of" class="headerlink" title="3.for of"></a>3.for of</h2><p>ES6中引入了 for … of 循环，以替代 for…in 和 forEach() ，允许对 Array(数组)、String(字符串)、Maps(映射)、Sets(集合)等可迭代的数据结构进行遍历。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> num <span class="keyword">of</span> array)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>for of是我在发现for in的bug之后用来代替的方法，但是我在使用其遍历一个字典的values时出现了问题，当时的代码类似于下面。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [&#123;<span class="number">1</span>:<span class="number">1</span>,<span class="number">2</span>:<span class="number">2</span>&#125;,&#123;<span class="number">1</span>:<span class="number">2</span>,<span class="number">2</span>:<span class="number">3</span>&#125;,&#123;<span class="number">1</span>:<span class="number">3</span>,<span class="number">2</span>:<span class="number">4</span>&#125;];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> dict <span class="keyword">of</span> <span class="built_in">Object</span>.values(array))&#123;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">dict</span>))</span>&#123;</span><br><span class="line">     	<span class="built_in">console</span>.log(dict[<span class="number">1</span>],,dict[<span class="number">2</span>]);</span><br><span class="line">    &#125;(dict)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果输出结果如下</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">undefined <span class="number">2</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<p>又是undefined，真是令人无语，很迷，完全找不到理由，所以我将其改成了for循环。待以后找到原因再说吧，现在对js这种动态语言的好感越来越低了，以后要是再简单的后端的话，我还是用flask吧，js真是一言难尽啊，难怪没什么人用它做后端框架，而是用在前端上。</p>
+<h2 id="4-for-each"><a href="#4-for-each" class="headerlink" title="4.for each"></a>4.for each</h2><p>forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">array.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>目前来说forEach()还没有发现什么别的坑，但是不多不说回调这个东西挺那个的，写的时候还要考虑是不是其他部分的代码对遍历结果是不是立即需要，反正记住回调里的代码会迟于外面的代码运行就行了。</p>
+<p>目前为止，js我只用到过上述的几种遍历方式，感觉js真的有很多的坑，等以后遇到js的其他坑，我再继续记录吧。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/InfinityMiao">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://airclouds-blog.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+
+</html>

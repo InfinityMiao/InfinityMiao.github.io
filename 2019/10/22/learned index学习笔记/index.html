@@ -24,7 +24,7 @@
     <script></script>
 </head>
 
-<body>
+<body background="http://www.lanrentuku.com/savepic/img/allimg/1305/5-13050GTF7.png">
 
 <div class="site-nav-toggle" id="site-nav-toggle">
     <button>
@@ -38,10 +38,10 @@
     <i> sometimes code， sometimes design </i>
 </div>
 
-<div class="index-container">
-    
-    <div class="index-left">
+<div class="index-container" style="background-color: transparent;">
         
+            <div class="index-left">
+                
 <div class="nav" id="nav">
     <div class="avatar-name">
         <div class="avatar radius">
@@ -108,14 +108,14 @@
     </div>
 </div>
 
-        <div class="index-about-mobile">
-            <i> sometimes code， sometimes design </i>
-        </div>
-    </div>
-    
-    <div class="index-middle">
-        <!-- Main Content -->
+                <div class="index-about-mobile">
+                    <i> sometimes code， sometimes design </i>
+                </div>
+            </div>
         
+        <div class="index-middle">
+            <!-- Main Content -->
+            
 
 
 <div class="post-container">
@@ -128,7 +128,10 @@
         
         <span class="attr">标签：/
         
-        <a class="tag" href="/tags/#--Learned index --机器学习" title="--Learned index --机器学习">--Learned index --机器学习</a>
+        <a class="tag" href="/tags/#Learned index" title="Learned index">Learned index</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#机器学习" title="机器学习">机器学习</a>
         <span>/</span>
         
         
@@ -146,7 +149,8 @@
 <li>B树确定了在区间[pos, pos + pagesize]内</li>
 <li>RM-Index在预测错误率在 min/max_err 以内时确定了 在[pos - min_err, pos + max_err]内</li>
 </ul>
-<p>一图以概之：<img src="http://5b0988e595225.cdn.sohucs.com/images/20181105/fe340b92b4954c4880e993211bc35dfd.jpeg" alt="img"></p>
+<p>一图以概之：</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20181105/fe340b92b4954c4880e993211bc35dfd.jpeg" alt="img"></p>
 <p>于是问题变成，如何把预测错误率 bound 在 max_err 以内？那就是训练，在训练集上的error可以降到极低的地步，而所有的数据就是我们的训练集，因此可以不用考虑过拟合的问题，甚至可以将过拟合作为最终的训练目标。而鉴于训练NN（Neural network）的复杂性，RM-Index多用于只读数据库的索引，或者更新较慢的数据库中（例如一天更新一次）。与此同时，NN可以在专用的芯片上获得惊人的速度，例如GPU或者TPU。时间复杂度要比B树的O(logn)快很多。</p>
 <h2 id="递归模型索引-RM-Index"><a href="#递归模型索引-RM-Index" class="headerlink" title="递归模型索引 RM-Index"></a>递归模型索引 RM-Index</h2><p>以上已经说完了核心思想，接下来就是要找到一个合适的预测模型来代替 B 树。实验发现，直接上 DNN 效果并不好：单次计算代价太大，只能用 GPU（而调用 GPU 会产生不小的 overhead）；而且网络很庞大，retrain（增删改）代价很大。为解决这个问题，决策树给我们做了个很好的提示，如果一个模型解决不了问题，就再加几层。</p>
 <p>举个例子：为 100M 记录训练一个足够精确的预测器太难，那就分成 3 层树状结构。根节点分类器把记录分出 100 份，每份大约有 1M 记录；第二层再分出 100 份，每份大约只剩 10K 记录；第三层再分出 100 份，每份大约有 100 条记录——假设 100 条纪录足够把误差在 min/max_err 之内。</p>
@@ -191,8 +195,9 @@
     </div>
 </div>
 
-    </div>
-    <div class="index-right">
+        </div>
+        <div class="index-right">
+        </div>
     </div>
 </div>
 

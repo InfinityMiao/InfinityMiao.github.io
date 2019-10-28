@@ -1,152 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    
+
+    
+
+    
+
+
+
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="InfinityMiao的博客">
-    <meta name="keyword"  content="腾讯">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    
+    
+    
+    <title>No title | InfinityMiao Blog | sometimes code， sometimes design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Learned index,机器学习">
+    <meta name="description" content="论文链接：https://www.researchgate.net/publication/321512926_The_Case_for_Learned_Index_Structures 前言数据库的索引和机器学习里的预测模型其实有一些相似之处，比如 B 树是把 key 映射到一个有序数组中的某个位置，Hash 索引是把 key 映射到一个无序数组中的某个位置，bitmap 是把 key 映射成是">
+<meta name="keywords" content="Learned index,机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No title">
+<meta property="og:url" content="http://infinitymiao.cn/2019/10/22/learned index学习笔记/index.html">
+<meta property="og:site_name" content="InfinityMiao Blog">
+<meta property="og:description" content="论文链接：https://www.researchgate.net/publication/321512926_The_Case_for_Learned_Index_Structures 前言数据库的索引和机器学习里的预测模型其实有一些相似之处，比如 B 树是把 key 映射到一个有序数组中的某个位置，Hash 索引是把 key 映射到一个无序数组中的某个位置，bitmap 是把 key 映射成是">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://5b0988e595225.cdn.sohucs.com/images/20181105/fe340b92b4954c4880e993211bc35dfd.jpeg">
+<meta property="og:image" content="http://5b0988e595225.cdn.sohucs.com/images/20181105/acca0ca189f643ffaea60a8f2f66b99b.jpeg">
+<meta property="og:image" content="http://5b0988e595225.cdn.sohucs.com/images/20181105/71f5f08870a842fd8d48f47c267cf758.jpeg">
+<meta property="og:image" content="http://5b0988e595225.cdn.sohucs.com/images/20181105/e174ebf808404dd59550d5d92b0fee14.jpeg">
+<meta property="og:updated_time" content="2019-10-23T02:07:11.671Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="No title">
+<meta name="twitter:description" content="论文链接：https://www.researchgate.net/publication/321512926_The_Case_for_Learned_Index_Structures 前言数据库的索引和机器学习里的预测模型其实有一些相似之处，比如 B 树是把 key 映射到一个有序数组中的某个位置，Hash 索引是把 key 映射到一个无序数组中的某个位置，bitmap 是把 key 映射成是">
+<meta name="twitter:image" content="http://5b0988e595225.cdn.sohucs.com/images/20181105/fe340b92b4954c4880e993211bc35dfd.jpeg">
+    
+        <link rel="alternate" type="application/atom+xml" title="InfinityMiao Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
-    <title>
-        
-        learned index学习笔记 - InfinityMiao的博客 | InfinityMiao&#39;s Blog
-        
-    </title>
+    <!-- custom head -->
+    
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
 </head>
 
-<!--<body style="background: -ms-linear-gradient(top,#dbf5ff,#f4fefe);-->
-<!--background:-moz-linear-gradient(top,#dbf5ff,#f4fefe);-->
-<!--background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#dbf5ff), to(#f4fefe));-->
-<!--background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dbf5ff), to(#f4fefe));-->
-<!--background: -webkit-linear-gradient(top, #dbf5ff, #f4fefe);-->
-<!--background: -o-linear-gradient(top, #dbf5ff, #f4fefe);">-->
 <body>
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
+    <div id="loading" class="active"></div>
 
-<div class="index-about">
-    <i> sometimes code， sometimes design </i>
-</div>
-
-<div class="index-container" style="background-color: transparent; " >
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">InfinityMiao</h5>
+          <a href="mailto:524937890@qq.com" title="524937890@qq.com" class="mail">524937890@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
         
-            <div class="index-left">
-                
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar radius">
-            <img src="/img/avatar.jpg" />
-        </div>
-        <div class="name">
-            <i>InfinityMiao</i>
-        </div>
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/infinitymiao" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
     </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archive">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">No title</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
     </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">No title</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-22T02:02:21.678Z" itemprop="datePublished" class="page-time">
+  2019-10-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#范围索引"><span class="toc-text">范围索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归模型索引-RM-Index"><span class="toc-text">递归模型索引 RM-Index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#混合索引"><span class="toc-text">混合索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
-</div>
+
+
+</header>
+
+
+<div class="container body-wrap">
     
-</div>
 
+<article id="post-learned index学习笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
-<div class="search-field" id="search-field">
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
+    <div class="post-card">
+        <h1 class="post-card-title">No title</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-22 10:02:21" datetime="2019-10-22T02:02:21.678Z"  itemprop="datePublished">2019-10-22</time>
 
-        </div>
-    </div>
-</div>
-
-                <div class="index-about-mobile">
-                    <i> sometimes code， sometimes design </i>
-                </div>
-            </div>
-        
-        <div class="index-middle" style="">
-            <!-- Main Content -->
             
 
 
-<div class="post-container">
-    <div class="post-title">
-        learned index学习笔记
-    </div>
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
 
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2019-10-22 10:02:21</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#Learned index" title="Learned index">Learned index</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#机器学习" title="机器学习">机器学习</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
-        <p>论文链接：<a href="https://www.researchgate.net/publication/321512926_The_Case_for_Learned_Index_Structures" target="_blank" rel="noopener">https://www.researchgate.net/publication/321512926_The_Case_for_Learned_Index_Structures</a></p>
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>论文链接：<a href="https://www.researchgate.net/publication/321512926_The_Case_for_Learned_Index_Structures" target="_blank" rel="noopener">https://www.researchgate.net/publication/321512926_The_Case_for_Learned_Index_Structures</a></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>数据库的索引和机器学习里的预测模型其实有一些相似之处，比如 B 树是把 key 映射到一个有序数组中的某个位置，Hash 索引是把 key 映射到一个无序数组中的某个位置，bitmap 是把 key 映射成是一个布尔值（存在与否）。</p>
 <p>所以这就是本文要讨论的地方了，以上的想法是可以实现的。实验表明，在某些数据集上（有规律可循的数据集），用 RM-Index 预测模型代替 B 树之类的数据结构，可以提升 70% 的速度、并节约相当可观的空间。</p>
 <h2 id="范围索引"><a href="#范围索引" class="headerlink" title="范围索引"></a>范围索引</h2><p>B树和RM-Index有一点很相似，都能够根据输入的数据而确定一个区间，这个区间就包含了最终想要得到的数据。</p>
@@ -155,12 +196,24 @@
 <li>RM-Index在预测错误率在 min/max_err 以内时确定了 在[pos - min_err, pos + max_err]内</li>
 </ul>
 <p>一图以概之：</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20181105/fe340b92b4954c4880e993211bc35dfd.jpeg" alt="img"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://5b0988e595225.cdn.sohucs.com/images/20181105/fe340b92b4954c4880e993211bc35dfd.jpeg" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
 <p>于是问题变成，如何把预测错误率 bound 在 max_err 以内？那就是训练，在训练集上的error可以降到极低的地步，而所有的数据就是我们的训练集，因此可以不用考虑过拟合的问题，甚至可以将过拟合作为最终的训练目标。而鉴于训练NN（Neural network）的复杂性，RM-Index多用于只读数据库的索引，或者更新较慢的数据库中（例如一天更新一次）。与此同时，NN可以在专用的芯片上获得惊人的速度，例如GPU或者TPU。时间复杂度要比B树的O(logn)快很多。</p>
 <h2 id="递归模型索引-RM-Index"><a href="#递归模型索引-RM-Index" class="headerlink" title="递归模型索引 RM-Index"></a>递归模型索引 RM-Index</h2><p>以上已经说完了核心思想，接下来就是要找到一个合适的预测模型来代替 B 树。实验发现，直接上 DNN 效果并不好：单次计算代价太大，只能用 GPU（而调用 GPU 会产生不小的 overhead）；而且网络很庞大，retrain（增删改）代价很大。为解决这个问题，决策树给我们做了个很好的提示，如果一个模型解决不了问题，就再加几层。</p>
 <p>举个例子：为 100M 记录训练一个足够精确的预测器太难，那就分成 3 层树状结构。根节点分类器把记录分出 100 份，每份大约有 1M 记录；第二层再分出 100 份，每份大约只剩 10K 记录；第三层再分出 100 份，每份大约有 100 条记录——假设 100 条纪录足够把误差在 min/max_err 之内。</p>
 <p>RM-Index结构示意：</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20181105/acca0ca189f643ffaea60a8f2f66b99b.jpeg" alt="img"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://5b0988e595225.cdn.sohucs.com/images/20181105/acca0ca189f643ffaea60a8f2f66b99b.jpeg" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
 <p>这样做的好处是，每层要做的事情简单多了（每层 precision gain = 100），模型可以变得简单得多。每个 NN 模型就像一个精通自己领域的专家，他只要学习某个很小子集的 keys 就可以了。这也同时解决了 last mile 难题，大不了为这一百左右个 keys 过拟合一下也无妨。</p>
 <h2 id="混合索引"><a href="#混合索引" class="headerlink" title="混合索引"></a>混合索引</h2><p>然而将数据根据大小分成几堆供不同的NN模型进行训练仍然有可能造成erro_rate过高（也许是因为这一堆的数据毫无规律可循），那么这时候就可以用到传统的预测方法了。</p>
 <p>上图中的三层网络结构还带来一个额外的优势：每个 Model 其实是独立的，我们可以用除了 NN 以外的预测方法代替之，包括线性回归等简单算法，甚至是 B 树。</p>
@@ -170,7 +223,13 @@
 <li>当叶节点的 NN 模型 error rate 超过阈值时，替换成 B 树</li>
 </ul>
 <p>训练算法如下：</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20181105/71f5f08870a842fd8d48f47c267cf758.jpeg" alt="img"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://5b0988e595225.cdn.sohucs.com/images/20181105/71f5f08870a842fd8d48f47c267cf758.jpeg" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
 <p>1.固定整个 RM-Index 的结构，比如层数、每层 Model 数量等（可以用网格法调参）；</p>
 <p>2.用全部数据训练根节点，然后用根节点分类后的数据训练第二层模型，再用第二层分类后的数据训练第三层；</p>
 <p>3.对于第三层（叶节点），如果 max_error 大于预设的阈值，就换成 B 树。</p>
@@ -183,98 +242,280 @@
 <li>Lognormal 数据集：按对数正态分布随机生成的数据</li>
 </ul>
 <p>测试中用了不同参数的 Learned Index 和 B 树，B 树也用了一个高度优化的实现。</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20181105/e174ebf808404dd59550d5d92b0fee14.jpeg" alt="img"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://5b0988e595225.cdn.sohucs.com/images/20181105/e174ebf808404dd59550d5d92b0fee14.jpeg" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Learned index适用于规律性强的数据，作这种数据的二级索引再合适不过了。内在规律越强，就意味着 B 树、哈希这些通用算法浪费的越多，这也是ML算法能捡到便宜的地方。</p>
 <p>然而缺点也是明显的：增删改代价难以控制，由于神经网络训练的时间以及空间的复杂性，这足以磨平它查找的优势，毕竟大部分的数据库都是要进行频繁的增删改操作的。</p>
 <p>但是，不得不肯定的是，作为应用范围最广的B树的地位是难以撼动的，但是在特定场景下（例如只读数据库），learned-index将会是一个现有方法的补充。</p>
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-
-        <div id="lv-container">
         </div>
 
-    </div>
-</div>
-
-        </div>
-        <div class="index-right">
-        </div>
-    </div>
-</div>
-
-
-<footer class="footer">
-    <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-        <li>
-            <a target="_blank"  href="https://github.com/InfinityMiao">
-                            <span class="fa-stack fa-lg">
-                                <i class="iconfont icon-github"></i>
-                            </span>
-            </a>
-        </li>
-        
-
-        
-
-    </ul>
+        <blockquote class="post-copyright">
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a></p>
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-23T02:07:11.671Z" itemprop="dateUpdated">2019-10-23 10:07:11</time>
+</span><br>
+
+
+        
+        原文地址：<a href="/2019/10/22/learned index学习笔记/" target="_blank" rel="external">http://infinitymiao.cn/2019/10/22/learned index学习笔记/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://infinitymiao.cn">
+            <img src="/img/avatar.jpg" alt="InfinityMiao">
+            InfinityMiao
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learned-index/">Learned index</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/&title=《No title》 — InfinityMiao Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/&title=《No title》 — InfinityMiao Blog&source=InfinityMiao的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/2019/10/22/learned index学习笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — InfinityMiao Blog&url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/&via=http://infinitymiao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/10/20/一些JavaScript的坑/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">No title</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>InfinityMiao &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
 </footer>
 
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/&title=《No title》 — InfinityMiao Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/&title=《No title》 — InfinityMiao Blog&source=InfinityMiao的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/2019/10/22/learned index学习笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — InfinityMiao Blog&url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/&via=http://infinitymiao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMklEQVR42u3awY7DIAxF0fn/n85sRxqF3mfTBeayqtomcFLJNTY/P3g8f0b6/v9P01m2DRkyZBzLeJZjvSwyJfk+n/eVKkOGjAsYtek7i34LsukdZMiQIWM98XpKEjr7D0KGDBky0pSuFnBJ8JUhQ4YMviBCQhOXgvuGvbgMGTIOZHS2pt9+/ZX+hgwZMo5iPOGotS3T4lq8KhkyZIxmpG1IkqKR1K2TRL7eQYYMGRcw+E03HIzAi1s/rNazkSFDxuEMcjFpahL8rhaCDBkypjJqSWGteVlL+NDfgAwZMkYz0oDYKoc1mpp8nTJkyJjHIGGxVlarfUqS1NdfQIYMGUMZ8VdxwyA9WlEL02gvLkOGjMMZaTrID1WkS+SlvddymwwZMoYy0nJYv9HY2eKia2XIkDGOUWs99lsF5A7BI5YhQ8YFjNpmko9+AhoctpAhQ8Y4RpqKpSV7kvx1Gg/FjFKGDBnHMkiRq3ZUIl0ib3Oi30SGDBnjGDxp6+8leRBHSaEMGTJGM3hBn7BriR0v9r1eJUOGjGsYnYJXGqDTVPJD4ihDhowLGGkWyVubnXQz2PrKkCFjKOMJBw+1NViRKkOGjNGMzoEJfoQrLeWvk9Fi7VCGDBmHM3iQTVuSNVIx4MqQIeMCRu3gxXrpafrIQ78MGTJk9IMsP2axbcsqQ4YMGaBJUNu41o56fOjEypAhYygjbQZwHk8x0wcnQ4aMexhp3sUTvhqP3H9D+ihDhowzGL8w0nRy9U2UbwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
 
 
 
 </body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.json"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-    <script>
-        /**
-         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-        */
-        if( '' || '')
-        var disqus_config = function () {
-            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://airclouds-blog.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-
-
-
 </html>

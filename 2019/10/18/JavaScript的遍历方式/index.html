@@ -1,263 +1,475 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    
+
+    
+
+    
+
+
+
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="InfinityMiao的博客">
-    <meta name="keyword"  content="腾讯">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    
+    
+    
+    <title>No title | InfinityMiao Blog | sometimes code， sometimes design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript,nodejs">
+    <meta name="description" content="之前在写用nodejs构建的网站后端时，理所当然的用到了遍历，js的遍历方式有很多种，先记下用到了的遍历方式以及其中遇到的坑。 1.for循环for循环的用法基本与c/c++类似，除了获得数组长度的方式 1234var array = [1,2,3,4,5,6,7,8,9];for(let i = 0;i&amp;lt;array.length;i++)&amp;#123;    console.log(arra">
+<meta name="keywords" content="JavaScript,nodejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No title">
+<meta property="og:url" content="http://infinitymiao.cn/2019/10/18/JavaScript的遍历方式/index.html">
+<meta property="og:site_name" content="InfinityMiao Blog">
+<meta property="og:description" content="之前在写用nodejs构建的网站后端时，理所当然的用到了遍历，js的遍历方式有很多种，先记下用到了的遍历方式以及其中遇到的坑。 1.for循环for循环的用法基本与c/c++类似，除了获得数组长度的方式 1234var array = [1,2,3,4,5,6,7,8,9];for(let i = 0;i&amp;lt;array.length;i++)&amp;#123;    console.log(arra">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-19T04:09:37.749Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="No title">
+<meta name="twitter:description" content="之前在写用nodejs构建的网站后端时，理所当然的用到了遍历，js的遍历方式有很多种，先记下用到了的遍历方式以及其中遇到的坑。 1.for循环for循环的用法基本与c/c++类似，除了获得数组长度的方式 1234var array = [1,2,3,4,5,6,7,8,9];for(let i = 0;i&amp;lt;array.length;i++)&amp;#123;    console.log(arra">
+    
+        <link rel="alternate" type="application/atom+xml" title="InfinityMiao Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
-    <title>
-        
-        JavaScript的遍历方式 - InfinityMiao的博客 | InfinityMiao&#39;s Blog
-        
-    </title>
+    <!-- custom head -->
+    
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
 </head>
 
-<!--<body style="background: -ms-linear-gradient(top,#dbf5ff,#f4fefe);-->
-<!--background:-moz-linear-gradient(top,#dbf5ff,#f4fefe);-->
-<!--background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#dbf5ff), to(#f4fefe));-->
-<!--background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dbf5ff), to(#f4fefe));-->
-<!--background: -webkit-linear-gradient(top, #dbf5ff, #f4fefe);-->
-<!--background: -o-linear-gradient(top, #dbf5ff, #f4fefe);">-->
 <body>
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
+    <div id="loading" class="active"></div>
 
-<div class="index-about">
-    <i> sometimes code， sometimes design </i>
-</div>
-
-<div class="index-container" style="background-color: transparent; " >
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">InfinityMiao</h5>
+          <a href="mailto:524937890@qq.com" title="524937890@qq.com" class="mail">524937890@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
         
-            <div class="index-left">
-                
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar radius">
-            <img src="/img/avatar.jpg" />
-        </div>
-        <div class="name">
-            <i>InfinityMiao</i>
-        </div>
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/infinitymiao" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
     </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archive">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">No title</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
     </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">No title</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-18T15:33:12.767Z" itemprop="datePublished" class="page-time">
+  2019-10-18
+</time>
+
+
+            
+        </h5>
+    </div>
+
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-for循环"><span class="toc-text">1.for循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-for-in"><span class="toc-text">2.for in</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-for-of"><span class="toc-text">3.for of</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-for-each"><span class="toc-text">4.for each</span></a></li></ol>
-</div>
+
+
+</header>
+
+
+<div class="container body-wrap">
     
-</div>
 
+<article id="post-JavaScript的遍历方式"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
-<div class="search-field" id="search-field">
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
+    <div class="post-card">
+        <h1 class="post-card-title">No title</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-18 23:33:12" datetime="2019-10-18T15:33:12.767Z"  itemprop="datePublished">2019-10-18</time>
 
-        </div>
-    </div>
-</div>
-
-                <div class="index-about-mobile">
-                    <i> sometimes code， sometimes design </i>
-                </div>
-            </div>
-        
-        <div class="index-middle" style="">
-            <!-- Main Content -->
             
 
 
-<div class="post-container">
-    <div class="post-title">
-        JavaScript的遍历方式
-    </div>
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
 
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2019-10-18 23:33:12</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
-        <p>之前在写用nodejs构建的网站后端时，理所当然的用到了遍历，js的遍历方式有很多种，先记下用到了的遍历方式以及其中遇到的坑。</p>
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>之前在写用nodejs构建的网站后端时，理所当然的用到了遍历，js的遍历方式有很多种，先记下用到了的遍历方式以及其中遇到的坑。</p>
 <h2 id="1-for循环"><a href="#1-for循环" class="headerlink" title="1.for循环"></a>1.for循环</h2><p>for循环的用法基本与c/c++类似，除了获得数组长度的方式</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(array[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>到目前为止，在使用for循环的代码中没有出现任何bug，因此推荐以后使用最传统的for循环。而其他的几中遍历方式多多少少都会出现问题，估计是nodejs的任务处理逻辑使得对数组对象进行遍历时出现了指针错误？不太清楚，待以后研究。</p>
 <h2 id="2-for-in"><a href="#2-for-in" class="headerlink" title="2.for in"></a>2.for in</h2><p> for in循环不仅可以遍历数组，还可以遍历对象</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> num <span class="keyword">in</span> array)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>因为之前python写的比较多，所以本来对for in还是很有好感的，因此最开始就是用的for in对数组进行的遍历。但是当我在使用for in遍历一个长度为500的二维数组时，在数组的最后一个位置并没有得到正确的变量，而是一个undefined，即array[499] = undefined，这个bug让我找了很久，也是我遇到的第一个不是我自己造成的坑(＃｀д´)ﾉ，然而令我没想到的是js的遍历还有更多的坑。</p>
 <h2 id="3-for-of"><a href="#3-for-of" class="headerlink" title="3.for of"></a>3.for of</h2><p>ES6中引入了 for … of 循环，以替代 for…in 和 forEach() ，允许对 Array(数组)、String(字符串)、Maps(映射)、Sets(集合)等可迭代的数据结构进行遍历。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> num <span class="keyword">of</span> array)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>for of是我在发现for in的bug之后用来代替的方法，但是我在使用其遍历一个字典的values时出现了问题，当时的代码类似于下面。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [&#123;<span class="number">1</span>:<span class="number">1</span>,<span class="number">2</span>:<span class="number">2</span>&#125;,&#123;<span class="number">1</span>:<span class="number">2</span>,<span class="number">2</span>:<span class="number">3</span>&#125;,&#123;<span class="number">1</span>:<span class="number">3</span>,<span class="number">2</span>:<span class="number">4</span>&#125;];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> dict <span class="keyword">of</span> <span class="built_in">Object</span>.values(array))&#123;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">dict</span>))</span>&#123;</span><br><span class="line">     	<span class="built_in">console</span>.log(dict[<span class="number">1</span>],,dict[<span class="number">2</span>]);</span><br><span class="line">    &#125;(dict)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>结果输出结果如下</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">undefined <span class="number">2</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">undefined <span class="number">2</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
 <p>又是undefined，真是令人无语，很迷，完全找不到理由，所以我将其改成了for循环。待以后找到原因再说吧，现在对js这种动态语言的好感越来越低了，以后要是再简单的后端的话，我还是用flask吧，js真是一言难尽啊，难怪没什么人用它做后端框架，而是用在前端上。</p>
-<h2 id="4-for-each"><a href="#4-for-each" class="headerlink" title="4.for each"></a>4.for each</h2><p>forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">array.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
+<h2 id="4-for-each"><a href="#4-for-each" class="headerlink" title="4.for each"></a>4.for each</h2><p>forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">array.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>目前来说forEach()还没有发现什么别的坑，但是不多不说回调这个东西挺那个的，写的时候还要考虑是不是其他部分的代码对遍历结果是不是立即需要，反正记住回调里的代码会迟于外面的代码运行就行了。</p>
 <p>目前为止，js我只用到过上述的几种遍历方式，感觉js真的有很多的坑，等以后遇到js的其他坑，我再继续记录吧。</p>
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-
-        <div id="lv-container">
         </div>
 
-    </div>
-</div>
-
-        </div>
-        <div class="index-right">
-        </div>
-    </div>
-</div>
-
-
-<footer class="footer">
-    <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-        <li>
-            <a target="_blank"  href="https://github.com/InfinityMiao">
-                            <span class="fa-stack fa-lg">
-                                <i class="iconfont icon-github"></i>
-                            </span>
-            </a>
-        </li>
-        
-
-        
-
-    </ul>
+        <blockquote class="post-copyright">
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a></p>
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-19T04:09:37.749Z" itemprop="dateUpdated">2019-10-19 12:09:37</time>
+</span><br>
+
+
+        
+        原文地址：<a href="/2019/10/18/JavaScript的遍历方式/" target="_blank" rel="external">http://infinitymiao.cn/2019/10/18/JavaScript的遍历方式/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://infinitymiao.cn">
+            <img src="/img/avatar.jpg" alt="InfinityMiao">
+            InfinityMiao
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/2019/10/18/JavaScript的遍历方式/&title=《No title》 — InfinityMiao Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/2019/10/18/JavaScript的遍历方式/&title=《No title》 — InfinityMiao Blog&source=InfinityMiao的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/2019/10/18/JavaScript的遍历方式/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — InfinityMiao Blog&url=http://infinitymiao.cn/2019/10/18/JavaScript的遍历方式/&via=http://infinitymiao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/2019/10/18/JavaScript的遍历方式/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/10/20/一些JavaScript的坑/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">No title</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/10/18/hello-world/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Hello World</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>InfinityMiao &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
 </footer>
 
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/2019/10/18/JavaScript的遍历方式/&title=《No title》 — InfinityMiao Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/2019/10/18/JavaScript的遍历方式/&title=《No title》 — InfinityMiao Blog&source=InfinityMiao的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/2019/10/18/JavaScript的遍历方式/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — InfinityMiao Blog&url=http://infinitymiao.cn/2019/10/18/JavaScript的遍历方式/&via=http://infinitymiao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/2019/10/18/JavaScript的遍历方式/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3aO27DMBAFwNz/0kobILD83lIqRA0rQ05kDovFfvjzE6/jz2qf//+2/ZXLFgYGxmMZx+k639bKFvP3n+8NAwPjPYxPPzzbbvLmc1K+NwwMDIxPf5MEwVnIxsDAwLgv4OZbnAViDAwMjKSITcLo+qHcXotjYGA8kLFSmt79+Zb5BgYGxqMYR7nOE7jZ8OBYXhgYGHszZgVqW4iuDAaKaxkYGBgvYMyGiCsFZ9KMS0YOGBgYGPkIIQ/E61fQ6oCLgYHxWMZ5OFspKa8deX75XwwMjK0ZSaLWfk5Sw9nboiIZAwNjO8asNdZOFdsrHcmTCzp8GBgYD2G0CVl+hWtWACfv/EjCwMDYlDEbRrZhcWVIEI0QMDAwtma0qV7LSBp5edBv23kYGBg7MdrR46xMbVtsdaqKgYGxNeOOKxfrh1XfGcHAwHgNI3l1mzImsbE9si8JIgYGxqaM/NWzcJk38vKwjoGB8U5G3mhrL0/kA4aVA8LAwNiVsVK+1kXmqOUX7RMDA+NljLxBdm3C144KMDAw3sZYCX9tBjrLUqP6GwMDYzvGUa5ZcZsXqMnz4YliYGA8ljELdm33LsHkaeJKyMbAwHguYxYuV364vSIWBVwMDIwXMGYtsCSA5olgO1LFwMDAyEvQJHy3Tbr8gDAwMDBmra5ZWtk++TLCxMDA2I6RB8oiXRtdnhgOQTEwMLZmzALorBzN223roRwDA2MLxi9TWrwqaaoSxwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
 
 
 
 </body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.json"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-    <script>
-        /**
-         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-        */
-        if( '' || '')
-        var disqus_config = function () {
-            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://airclouds-blog.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-
-
-
 </html>

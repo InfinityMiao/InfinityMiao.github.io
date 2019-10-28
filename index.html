@@ -1,295 +1,531 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    
+
+    
+
+    
+
+
+
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    
+    
+    <title>InfinityMiao Blog | sometimes code， sometimes design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
     <meta name="description" content="InfinityMiao的博客">
-    <meta name="keyword"  content="腾讯">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:title" content="InfinityMiao Blog">
+<meta property="og:url" content="http://infinitymiao.cn/index.html">
+<meta property="og:site_name" content="InfinityMiao Blog">
+<meta property="og:description" content="InfinityMiao的博客">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="InfinityMiao Blog">
+<meta name="twitter:description" content="InfinityMiao的博客">
+    
+        <link rel="alternate" type="application/atom+xml" title="InfinityMiao Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 
-    <title>
-        
-        InfinityMiao的博客 | InfinityMiao&#39;s Blog
-        
-    </title>
+    <!-- custom head -->
+    
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
 </head>
 
-<!--<body style="background: -ms-linear-gradient(top,#dbf5ff,#f4fefe);-->
-<!--background:-moz-linear-gradient(top,#dbf5ff,#f4fefe);-->
-<!--background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#dbf5ff), to(#f4fefe));-->
-<!--background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dbf5ff), to(#f4fefe));-->
-<!--background: -webkit-linear-gradient(top, #dbf5ff, #f4fefe);-->
-<!--background: -o-linear-gradient(top, #dbf5ff, #f4fefe);">-->
 <body>
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
+    <div id="loading" class="active"></div>
 
-<div class="index-about">
-    <i> sometimes code， sometimes design </i>
-</div>
-
-<div class="index-container" style="background-color: transparent; " >
-        
-            <div class="index-left">
-                
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar radius">
-            <img src="/img/avatar.jpg" />
-        </div>
-        <div class="name">
-            <i>InfinityMiao</i>
-        </div>
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">InfinityMiao</h5>
+          <a href="mailto:524937890@qq.com" title="524937890@qq.com" class="mail">524937890@qq.com</a>
+        </hgroup>
+      </div>
     </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li  class=active >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect active">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
             </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
             </li>
-            <li >
-                <a href="/archive">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
             </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
             </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/infinitymiao" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">InfinityMiao Blog</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">InfinityMiao Blog</h1>
+        <h5 class="subtitle">
             
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
+                sometimes code， sometimes design
             
-        </ul>
+        </h5>
     </div>
+
     
-</div>
 
 
-<div class="search-field" id="search-field">
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
+</header>
 
-        </div>
-    </div>
-</div>
+<div class="container body-wrap">
 
-                <div class="index-about-mobile">
-                    <i> sometimes code， sometimes design </i>
-                </div>
-            </div>
-        
-        <div class="index-middle" style="">
-            <!-- Main Content -->
-            
-<div class="post-preview-container" style="min-height: 576px">
+    <ul class="post-list">
     
-    <div class="post-preview">
-        <div class="post-time">2019-10-22</div>
-        <div class="post-info">
-            <a href="/2019/10/22/learned index学习笔记/">
-                <h3>
-                    learned index学习笔记
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Learned index" title="Learned index">Learned index</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#机器学习" title="机器学习">机器学习</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-10-20</div>
-        <div class="post-info">
-            <a href="/2019/10/20/一些JavaScript的坑/">
-                <h3>
-                    一些JavaScript的坑
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Nodejs" title="Nodejs">Nodejs</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-10-18</div>
-        <div class="post-info">
-            <a href="/2019/10/18/JavaScript的遍历方式/">
-                <h3>
-                    JavaScript的遍历方式
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-10-18</div>
-        <div class="post-info">
-            <a href="/2019/10/18/hello-world/">
-                <h3>
-                    Hello World
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-10-21</div>
-        <div class="post-info">
-            <a href="/2018/10/21/使用 Node.js 打造多用户实时监控系统/">
-                <h3>
-                    使用 Node.js 打造多用户实时监控系统
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Node.js" title="Node.js">Node.js</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#Rx.js" title="Rx.js">Rx.js</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-</div>
-<ul class="pager">
-    
-    
-</ul>
+        <li class="post-list-item fade">
+            <article id="post-learned index学习笔记"
+  class="article-card article-type-post" itemprop="blogPost">
 
-        </div>
-        <div class="index-right">
-        </div>
-    </div>
-</div>
-
-
-<footer class="footer">
-    <ul class="list-inline text-center">
-        
-        
+    <div class="post-meta">
+        <time class="post-time" title="2019-10-22 10:02:21" datetime="2019-10-22T02:02:21.678Z"  itemprop="datePublished">2019-10-22</time>
 
         
 
-        
 
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/10/22/learned index学习笔记/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        论文链接：https://www.researchgate.net/publication/321512926_The_Case_for_Learned_Index_Structures
+前言数据库的索引和机器学习里的预测模型其实有一些相似之处，比如 B 树是把 key 映射到一个有序数组中的某个位置，Hash 索引是把 key 映射到一个无序数组中的某个位置，bitmap 是把 key 映...
+    
+
+        <a href="/2019/10/22/learned index学习笔记/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
         
-        <li>
-            <a target="_blank"  href="https://github.com/InfinityMiao">
-                            <span class="fa-stack fa-lg">
-                                <i class="iconfont icon-github"></i>
-                            </span>
-            </a>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learned-index/">Learned index</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+
+    </div>
+    
+</article>
+
         </li>
-        
-
-        
-
-    </ul>
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a></p>
+        <li class="post-list-item fade">
+            <article id="post-一些JavaScript的坑"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-10-20 22:47:33" datetime="2019-10-20T14:47:33.410Z"  itemprop="datePublished">2019-10-20</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/10/20/一些JavaScript的坑/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        不得不说js是一种有点奇葩的语言，有很多的地方和其他语言不同，在写js的时候如果理所当然的用其他语言的方法去写会有很多的问题。
+因此在这里将会有一些JavaScript与其他语言的“与众不同”的地方，避免以后再踩。
+数组的排序JavaScript数组默认的排序方式很奇葩，它默认的排序方式array.sort()类似于python中由字符串构成的数组。
+123456let array = [1...
+    
+
+        <a href="/2019/10/20/一些JavaScript的坑/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Nodejs</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-JavaScript的遍历方式"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-10-18 23:33:12" datetime="2019-10-18T15:33:12.767Z"  itemprop="datePublished">2019-10-18</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/10/18/JavaScript的遍历方式/">No title</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        之前在写用nodejs构建的网站后端时，理所当然的用到了遍历，js的遍历方式有很多种，先记下用到了的遍历方式以及其中遇到的坑。
+1.for循环for循环的用法基本与c/c++类似，除了获得数组长度的方式
+1234var array = [1,2,3,4,5,6,7,8,9];for(let i = 0;i&lt;array.length;i++)&#123;    console.log(a...
+    
+
+        <a href="/2019/10/18/JavaScript的遍历方式/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-hello-world"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-10-18 00:28:36" datetime="2019-10-17T16:28:36.770Z"  itemprop="datePublished">2019-10-18</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/10/18/hello-world/">Hello World</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Qu...
+    
+
+        <a href="/2019/10/18/hello-world/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-使用 Node.js 打造多用户实时监控系统"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-10-21 17:15:38" datetime="2018-10-21T09:15:38.000Z"  itemprop="datePublished">2018-10-21</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/10/21/使用 Node.js 打造多用户实时监控系统/">使用 Node.js 打造多用户实时监控系统</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        背景概述首先描述一下笔者遇到的问题，我们可以设定这样一个场景：现在有一个实时监控系统的开发需求，要求同时支持多个用户（这里我们为了简化，暂时不涉及登陆态，假定一个设备即为一个用户），对于不同的用户来讲，他们需要监控的一部分内容是完全相同的，比如设备的 CPU 信息、内存信息等，而另外一部分内容是部分用户重叠的，比如对某一区域的用户来说某些监控信息是相同的，而还有一些信息，则是用户之间完全不同...
+    
+
+        <a href="/2018/10/21/使用 Node.js 打造多用户实时监控系统/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rx-js/">Rx.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>InfinityMiao &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
 </footer>
 
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
 
-</body>
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/&title=InfinityMiao Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/&title=InfinityMiao Blog&source=InfinityMiao的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=InfinityMiao Blog&url=http://infinitymiao.cn/&via=http://infinitymiao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
 
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABSElEQVR42u3aMQ7EIAwF0dz/0tk2TdB8mxSLhzKK4DUYY3NdeNwvY/3P8/v1xZAl6yDWvRzkH8Lla8mSNZn1tkPJPyRk8LVkyZJFWOToTY9tWbJkdVhpUJAlS9aaRZLmt4VJsPgwl5cl6whWbepOENlc35Il689ZtfJQLSEOVpElaxirfx3lhzGfX5asyaw0XU7LuHGIkSVrDKufcXeusqiyJUvWAFanhclbKelTIVmyJrPSMu6a23nEIEvWZBY/htNmCW98olu1LFkDWHwD8xBQe4IgS9ZMVueQTku36AIsS5Ys3MLsF6FQc0WWrKNZxacA4Ybn88iSNZPVb6LwK24nlMiSNYHFi0G1Vkr6bEiWrMmstMBEltkQk2TJkoXbIRvCgSxZshqsWsKNClWyZI1k9R8NdNqismTJqjVC0srP5sqWLFnnsH4LGzX9ECfDTAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.json"
-    window.hexo_root = "/"
-    window.isPost = false
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
 </script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
 
+
+
+</body>
 </html>

@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://5b0988e595225.cdn.sohucs.com/images/20181105/e174ebf808404dd59550d5d92b0fee14.jpeg">
 <meta property="og:image" content="https://img2018.cnblogs.com/blog/117546/201904/117546-20190416001105042-1000082435.png">
 <meta property="og:image" content="https://img2018.cnblogs.com/blog/117546/201904/117546-20190416001133561-1804809781.png">
-<meta property="og:updated_time" content="2019-11-11T15:59:57.326Z">
+<meta property="og:updated_time" content="2019-11-11T16:01:50.330Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="learned index学习笔记">
 <meta name="twitter:description" content="论文链接：https://www.researchgate.net/publication/321512926_The_Case_for_Learned_Index_Structures 前言数据库的索引和机器学习里的预测模型其实有一些相似之处，比如 B 树是把 key 映射到一个有序数组中的某个位置，Hash 索引是把 key 映射到一个无序数组中的某个位置，bitmap 是把 key 映射成是">
@@ -278,9 +278,9 @@
 <h2 id="EXISTENCE-INDEX"><a href="#EXISTENCE-INDEX" class="headerlink" title="EXISTENCE INDEX"></a>EXISTENCE INDEX</h2><h3 id="Bloom-filters作为分类问题"><a href="#Bloom-filters作为分类问题" class="headerlink" title="Bloom filters作为分类问题"></a>Bloom filters作为分类问题</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://img2018.cnblogs.com/blog/117546/201904/117546-20190416001133561-1804809781.png" alt="" title="">
+                    <img src="https://img2018.cnblogs.com/blog/117546/201904/117546-20190416001133561-1804809781.png" alt="img" title="">
                 </div>
-                <div class="image-caption"></div>
+                <div class="image-caption">img</div>
             </figure>
 <p>我们需要训练这样一个神经网络，使得 log 损失函数最小。为了满足假阴性为0这个条件，我们创建一个溢出的布隆过滤器，根据阈值学习一个模型，当输出结果大于等于阈值的时候，我们认为这个 key 是存在于 set 中的，当小于阈值时，则去 check 溢出的布隆过滤器。</p>
 <p>简单的说，就是将存在的 key 和不存在的 key 划分为两个数据集，然后融合到一个集合中进行训练，最小化一个 log 损失函数。</p>
@@ -298,7 +298,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-11-11T15:59:57.326Z" itemprop="dateUpdated">2019-11-11 23:59:57</time>
+    最后更新时间：<time datetime="2019-11-11T16:01:50.330Z" itemprop="dateUpdated">2019-11-12 00:01:50</time>
 </span><br>
 
 

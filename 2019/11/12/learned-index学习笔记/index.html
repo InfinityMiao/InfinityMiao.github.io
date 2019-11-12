@@ -25,20 +25,20 @@
 <meta name="keywords" content="Learned index,机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="learned index学习笔记">
-<meta property="og:url" content="http://infinitymiao.cn/2019/10/22/learned index学习笔记/index.html">
+<meta property="og:url" content="http://infinitymiao.cn/2019/11/12/learned-index学习笔记/index.html">
 <meta property="og:site_name" content="InfinityMiao&#39;s Blog">
 <meta property="og:description" content="论文链接：https://www.researchgate.net/publication/321512926_The_Case_for_Learned_Index_Structures 前言数据库的索引和机器学习里的预测模型其实有一些相似之处，比如 B 树是把 key 映射到一个有序数组中的某个位置，Hash 索引是把 key 映射到一个无序数组中的某个位置，bitmap 是把 key 映射成是">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://infinitymiao.cn/.cn//img/4970205-9476d2a6100450b2.webp">
-<meta property="og:image" content="http://infinitymiao.cn/.cn//img/4970205-80e92630e20bba66.webp">
-<meta property="og:image" content="http://infinitymiao.cn/.cn//img/e174ebf808404dd59550d5d92b0fee14.jpeg">
-<meta property="og:image" content="http://infinitymiao.cn/.cn//img/117546-20190416001105042-1000082435.png">
+<meta property="og:image" content="http://infinitymiao.cn/.cn//4970205-9476d2a6100450b2.webp">
+<meta property="og:image" content="http://infinitymiao.cn/.cn//4970205-80e92630e20bba66.webp">
+<meta property="og:image" content="http://infinitymiao.cn/.cn//e174ebf808404dd59550d5d92b0fee14.jpeg">
+<meta property="og:image" content="http://infinitymiao.cn/.cn//117546-20190416001105042-1000082435.png">
 <meta property="og:image" content="http://infinitymiao.cn/.cn//117546-20190416001133561-1804809781.png">
-<meta property="og:updated_time" content="2019-11-12T01:39:03.132Z">
+<meta property="og:updated_time" content="2019-11-12T01:44:45.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="learned index学习笔记">
 <meta name="twitter:description" content="论文链接：https://www.researchgate.net/publication/321512926_The_Case_for_Learned_Index_Structures 前言数据库的索引和机器学习里的预测模型其实有一些相似之处，比如 B 树是把 key 映射到一个有序数组中的某个位置，Hash 索引是把 key 映射到一个无序数组中的某个位置，bitmap 是把 key 映射成是">
-<meta name="twitter:image" content="http://infinitymiao.cn/.cn//img/4970205-9476d2a6100450b2.webp">
+<meta name="twitter:image" content="http://infinitymiao.cn/.cn//4970205-9476d2a6100450b2.webp">
     
         <link rel="alternate" type="application/atom+xml" title="InfinityMiao&#39;s Blog" href="/atom.xml">
     
@@ -151,8 +151,8 @@
         <h1 class="title">learned index学习笔记</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-10-22T02:02:21.678Z" itemprop="datePublished" class="page-time">
-  2019-10-22
+                <time datetime="2019-11-12T01:42:27.971Z" itemprop="datePublished" class="page-time">
+  2019-11-12
 </time>
 
 
@@ -169,13 +169,13 @@
 <div class="container body-wrap">
     
 
-<article id="post-learned index学习笔记"
+<article id="post-learned-index学习笔记"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">learned index学习笔记</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-10-22 10:02:21" datetime="2019-10-22T02:02:21.678Z"  itemprop="datePublished">2019-10-22</time>
+            <time class="post-time" title="2019-11-12 09:42:27" datetime="2019-11-12T01:42:27.971Z"  itemprop="datePublished">2019-11-12</time>
 
             
 
@@ -209,9 +209,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/.cn//img/4970205-9476d2a6100450b2.webp" alt="img" title="">
+                    <img src="/.cn//4970205-9476d2a6100450b2.webp" alt="" title="">
                 </div>
-                <div class="image-caption">img</div>
+                <div class="image-caption"></div>
             </figure>
 <p>这种模型结构的好处是：</p>
 <ol>
@@ -230,9 +230,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/.cn//img/4970205-80e92630e20bba66.webp" alt="img" title="">
+                    <img src="/.cn//4970205-80e92630e20bba66.webp" alt="" title="">
                 </div>
-                <div class="image-caption">img</div>
+                <div class="image-caption"></div>
             </figure>
 <p>4-10行实现了基于顶点模型进行训练，并将范围内的 key 存入；11-14行，根据阈值决定是否使用 B 树代替模型。</p>
 <p>1.固定整个 RM-Index 的结构，比如层数、每层 Model 数量等（可以用网格法调参）；</p>
@@ -254,9 +254,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/.cn//img/e174ebf808404dd59550d5d92b0fee14.jpeg" alt="img" title="">
+                    <img src="/.cn//e174ebf808404dd59550d5d92b0fee14.jpeg" alt="" title="">
                 </div>
-                <div class="image-caption">img</div>
+                <div class="image-caption"></div>
             </figure>
 <h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>学习索引的主要缺点是它的静态性质。其数据结构不支持任何修改，包括插入、更新或删除。给定一个要插入的键k，我们首先使用该模型找到k的插入位置。然后，我们创建一个新数组，其长度为1加上旧数组的长度。接下来，我们将数据从旧数组复制到新数组，其中k的插入位置右侧的元素向右移动一个位置。我们在新数组的插入位置插入k。最后，我们更新模型以反映数据分布的变化。</p>
 <p>这种策略对于数据大小具有线性时间复杂性。此外，随着数据的插入，RMI模型随着时间的推移变得不那么精确，这需要对模型进行再培训，进一步增加了插入的成本。显然，这种天真的插入策略在实践中是不可接受的。</p>
@@ -271,16 +271,16 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/.cn//img/117546-20190416001105042-1000082435.png" alt="img" title="">
+                    <img src="/.cn//117546-20190416001105042-1000082435.png" alt="" title="">
                 </div>
-                <div class="image-caption">img</div>
+                <div class="image-caption"></div>
             </figure>
 <h2 id="EXISTENCE-INDEX"><a href="#EXISTENCE-INDEX" class="headerlink" title="EXISTENCE INDEX"></a>EXISTENCE INDEX</h2><h3 id="Bloom-filters作为分类问题"><a href="#Bloom-filters作为分类问题" class="headerlink" title="Bloom filters作为分类问题"></a>Bloom filters作为分类问题</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/.cn//117546-20190416001133561-1804809781.png" alt="img" title="">
+                    <img src="/.cn//117546-20190416001133561-1804809781.png" alt="" title="">
                 </div>
-                <div class="image-caption">img</div>
+                <div class="image-caption"></div>
             </figure>
 <p>我们需要训练这样一个神经网络，使得 log 损失函数最小。为了满足假阴性为0这个条件，我们创建一个溢出的布隆过滤器，根据阈值学习一个模型，当输出结果大于等于阈值的时候，我们认为这个 key 是存在于 set 中的，当小于阈值时，则去 check 溢出的布隆过滤器。</p>
 <p>简单的说，就是将存在的 key 和不存在的 key 划分为两个数据集，然后融合到一个集合中进行训练，最小化一个 log 损失函数。</p>
@@ -298,12 +298,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-11-12T01:39:03.132Z" itemprop="dateUpdated">2019-11-12 09:39:03</time>
+    最后更新时间：<time datetime="2019-11-12T01:44:45.986Z" itemprop="dateUpdated">2019-11-12 09:44:45</time>
 </span><br>
 
 
         
-        原文地址：<a href="/2019/10/22/learned index学习笔记/" target="_blank" rel="external">http://infinitymiao.cn/2019/10/22/learned index学习笔记/</a>
+        原文地址：<a href="/2019/11/12/learned-index学习笔记/" target="_blank" rel="external">http://infinitymiao.cn/2019/11/12/learned-index学习笔记/</a>
         
     </div>
     
@@ -330,7 +330,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/&title=《learned index学习笔记》 — InfinityMiao's Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/2019/11/12/learned-index学习笔记/&title=《learned index学习笔记》 — InfinityMiao's Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -340,22 +340,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/&title=《learned index学习笔记》 — InfinityMiao's Blog&source=InfinityMiao的博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/2019/11/12/learned-index学习笔记/&title=《learned index学习笔记》 — InfinityMiao's Blog&source=InfinityMiao的博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/2019/10/22/learned index学习笔记/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/2019/11/12/learned-index学习笔记/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《learned index学习笔记》 — InfinityMiao's Blog&url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/&via=http://infinitymiao.cn" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《learned index学习笔记》 — InfinityMiao's Blog&url=http://infinitymiao.cn/2019/11/12/learned-index学习笔记/&via=http://infinitymiao.cn" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/2019/11/12/learned-index学习笔记/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -375,21 +375,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/11/12/learned-index学习笔记/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">learned index学习笔记</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/10/20/一些JavaScript的坑/" id="post-next" class="post-nav-link">
+      <a href="/2019/10/22/learned index学习笔记/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">一些JavaScript的坑</h4>
+        <h4 class="title">learned index学习笔记</h4>
       </a>
     </div>
   
@@ -463,7 +456,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/&title=《learned index学习笔记》 — InfinityMiao's Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/2019/11/12/learned-index学习笔记/&title=《learned index学习笔记》 — InfinityMiao's Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -473,22 +466,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/&title=《learned index学习笔记》 — InfinityMiao's Blog&source=InfinityMiao的博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/2019/11/12/learned-index学习笔记/&title=《learned index学习笔记》 — InfinityMiao's Blog&source=InfinityMiao的博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/2019/10/22/learned index学习笔记/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/2019/11/12/learned-index学习笔记/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《learned index学习笔记》 — InfinityMiao's Blog&url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/&via=http://infinitymiao.cn" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《learned index学习笔记》 — InfinityMiao's Blog&url=http://infinitymiao.cn/2019/11/12/learned-index学习笔记/&via=http://infinitymiao.cn" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/2019/10/22/learned index学习笔记/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/2019/11/12/learned-index学习笔记/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -499,7 +492,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMklEQVR42u3awY7DIAxF0fn/n85sRxqF3mfTBeayqtomcFLJNTY/P3g8f0b6/v9P01m2DRkyZBzLeJZjvSwyJfk+n/eVKkOGjAsYtek7i34LsukdZMiQIWM98XpKEjr7D0KGDBky0pSuFnBJ8JUhQ4YMviBCQhOXgvuGvbgMGTIOZHS2pt9+/ZX+hgwZMo5iPOGotS3T4lq8KhkyZIxmpG1IkqKR1K2TRL7eQYYMGRcw+E03HIzAi1s/rNazkSFDxuEMcjFpahL8rhaCDBkypjJqSWGteVlL+NDfgAwZMkYz0oDYKoc1mpp8nTJkyJjHIGGxVlarfUqS1NdfQIYMGUMZ8VdxwyA9WlEL02gvLkOGjMMZaTrID1WkS+SlvddymwwZMoYy0nJYv9HY2eKia2XIkDGOUWs99lsF5A7BI5YhQ8YFjNpmko9+AhoctpAhQ8Y4RpqKpSV7kvx1Gg/FjFKGDBnHMkiRq3ZUIl0ib3Oi30SGDBnjGDxp6+8leRBHSaEMGTJGM3hBn7BriR0v9r1eJUOGjGsYnYJXGqDTVPJD4ihDhowLGGkWyVubnXQz2PrKkCFjKOMJBw+1NViRKkOGjNGMzoEJfoQrLeWvk9Fi7VCGDBmHM3iQTVuSNVIx4MqQIeMCRu3gxXrpafrIQ78MGTJk9IMsP2axbcsqQ4YMGaBJUNu41o56fOjEypAhYygjbQZwHk8x0wcnQ4aMexhp3sUTvhqP3H9D+ihDhowzGL8w0nRy9U2UbwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNElEQVR42u3aQW7DMAwF0dz/0i7QVYHWznzSQRpytAqcONLTghBFPh54HN/j+vPv3/8cfBb++3jIkCHjYxnH5SCM6yfXs5AtQ+/KkCFjAYP/HZ+SM8j2PVmzDBkyZFwCyJNOwJUhQ4aMTsDtLDo9hsqQIUPGXUc3svTOvDfk4jJkyPhAxl2FgVd8fkN9Q4YMGf+McYSD/w8pT9aC7B9vyZAhYzSDX5zVWivSwyUpiJ5uqAwZMoYyau0Unb6stC2MJMMyZMiYzUgD7quTVV4SkCFDxh4GTyDT4Ju2X9Qu+2TIkLGHQdJFnpqml3Tpt6e3hjJkyBjN4Ee069YKfsXGW8pQKitDhoxljH6S2S8hkMz7ScCVIUPGOEanfMj/gbRi8C2TIUPGNgYPfHxxaVoblCplyJCxmMEBaaqJ6qhhaeG0hClDhoxxDBIiScrKJ+bf8os8GTJk7GGkB7va0TAtPHSCtQwZMiYx0qaKtGEiJdVSaxkyZGxm1K7S0iu5zhMZMmTMZpBpyBGtc3zkjWKnb8mQIWMBIz381UoFKTKYXYYMGaMZQYoYtkeQYB3c/6XXbTJkyBjEOMKRljBrGH6gPG0LkyFDxiBGGuzuKnDywyhvv5AhQ8ZsRlporOFrvGANMmTIWMDgQZaHRbKU2qGzeN0mQ4aMBYw01qWNF2k5oRhwZciQsYCRNm+lW8CftAKuDBkyPpBRuz7jYbFWbAi2RoYMGaMZNySQ4El/g9ABUYYMGdMYX+jm0T90Z9LLAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

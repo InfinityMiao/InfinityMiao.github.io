@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>ALEX学习笔记 | InfinityMiao&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="机器学习,Learned Index,ALEX">
+    <meta name="description" content="&amp;#x6982;&amp;#x8FF0;                                                                                             &amp;#x56FE;1">
+<meta name="keywords" content="机器学习,Learned Index,ALEX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ALEX学习笔记">
+<meta property="og:url" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/index.html">
+<meta property="og:site_name" content="InfinityMiao&#39;s Blog">
+<meta property="og:description" content="&amp;#x6982;&amp;#x8FF0;                                                                                             &amp;#x56FE;1">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-1.jpg">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905.jpg">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-10.png">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-11.png">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-12.png">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-2.jpg">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-3.jpg">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-4.jpg">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-5.png">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-6.png">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905.jpg">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-7.PNG">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-8.PNG">
+<meta property="og:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-9.PNG">
+<meta property="og:updated_time" content="2019-11-29T03:53:59.904Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ALEX学习笔记">
+<meta name="twitter:description" content="&amp;#x6982;&amp;#x8FF0;                                                                                             &amp;#x56FE;1">
+<meta name="twitter:image" content="http://infinitymiao.cn/2019/11/25/ALEX学习笔记/1905-1.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="InfinityMiao&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/ img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">InfinityMiao</h5>
+          <a href="mailto:524937890@qq.com" title="524937890@qq.com" class="mail">524937890@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archive"  >
+                <i class="icon icon-lg icon-archive"></i>
+                Archive
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/infinitymiao" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ALEX学习笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ALEX学习笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-25T13:25:45.000Z" itemprop="datePublished" class="page-time">
+  2019-11-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Gapped-Array-GA"><span class="post-toc-number">2.</span> <span class="post-toc-text">Gapped Array(GA)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">插入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查找"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">查找</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩展"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">扩展</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入的最坏情况"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">插入的最坏情况</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Paked-Memory-Array-PMA"><span class="post-toc-number">3.</span> <span class="post-toc-text">Paked Memory Array(PMA)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">插入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查找-1"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">查找</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩展-1"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">扩展</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Adaptive-RMI（自适应递归模型索引）"><span class="post-toc-number">4.</span> <span class="post-toc-text">Adaptive RMI（自适应递归模型索引）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#初始化"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入-2"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">插入</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实验结果评估"><span class="post-toc-number">5.</span> <span class="post-toc-text">实验结果评估</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据集"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">数据集</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结果"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">结果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">
+                
+                    
+                    
+                
+                
+            </span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#个人总结"><span class="post-toc-number">6.</span> <span class="post-toc-text">个人总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优点："><span class="post-toc-number">6.1.</span> <span class="post-toc-text">优点：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缺点："><span class="post-toc-number">6.2.</span> <span class="post-toc-text">缺点：</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-ALEX学习笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ALEX学习笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-25 21:25:45" datetime="2019-11-25T13:25:45.000Z"  itemprop="datePublished">2019-11-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="&#x6982;&#x8FF0;"><a href="#&#x6982;&#x8FF0;" class="headerlink" title="&#x6982;&#x8FF0;"></a>&#x6982;&#x8FF0;</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905-1.jpg" alt="&#x56FE;1" title="">
+                </div>
+                <div class="image-caption">&#x56FE;1</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905.jpg" alt="&#x56FE;2" title="">
+                </div>
+                <div class="image-caption">&#x56FE;2</div>
+            </figure>
+<h2 id="Gapped-Array-GA"><a href="#Gapped-Array-GA" class="headerlink" title="Gapped Array(GA)"></a>Gapped Array(GA)</h2><h3 id="&#x63D2;&#x5165;"><a href="#&#x63D2;&#x5165;" class="headerlink" title="&#x63D2;&#x5165;"></a>&#x63D2;&#x5165;</h3><p>&#x5982;&#x679C;&#x63D2;&#x5165;&#x4F4D;&#x7F6E;&#x662F;&#x95F4;&#x9699;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5728;&#x90A3;&#x91CC;&#x63D2;&#x5165;&#x5143;&#x7D20;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;&#x5982;&#x679C;&#x63D2;&#x5165;&#x4F4D;&#x7F6E;&#x4E0D;&#x662F;&#x95F4;&#x9699;&#xFF0C;&#x5219;&#x901A;&#x8FC7;&#x5C06;&#x5143;&#x7D20;&#x5411;&#x6700;&#x8FD1;&#x95F4;&#x9699;&#x7684;&#x65B9;&#x5411;&#x79FB;&#x52A8;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x5728;&#x63D2;&#x5165;&#x4F4D;&#x7F6E;&#x4E0A;&#x5236;&#x9020;&#x4E00;&#x4E2A;&#x95F4;&#x9699;&#x3002;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5C06;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5230;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x95F4;&#x9699;&#x4E2D;&#x3002;</p>
+<p>&#x539F;&#x59CB;&#x6570;&#x7EC4;&#xFF1A;</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905-10.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>&#x63D2;&#x5165;16</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905-11.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>&#x63D2;&#x5165;15&#x9700;&#x8981;&#x627E;&#x5230;&#x6700;&#x8FD1;&#x7684;&#x95F4;&#x9699;&#xFF0C;&#x5C06;&#x65C1;&#x8FB9;&#x7684;&#x6570;&#x79FB;&#x8FC7;&#x53BB;&#xFF0C;&#x518D;&#x63D2;&#x5165;</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905-12.png" alt="1905-12" title="">
+                </div>
+                <div class="image-caption">1905-12</div>
+            </figure>
+<h3 id="&#x67E5;&#x627E;"><a href="#&#x67E5;&#x627E;" class="headerlink" title="&#x67E5;&#x627E;"></a>&#x67E5;&#x627E;</h3><p>&#x5982;&#x679C;&#x5C06;&#x952E;&#x7CBE;&#x786E;&#x653E;&#x7F6E;&#x5728;&#x4E86;&#x52A8;&#x6001;RMI&#x6A21;&#x578B;&#x9884;&#x6D4B;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x7A0D;&#x540E;&#x57FA;&#x4E8E;&#x6A21;&#x578B;&#x7684;&#x67E5;&#x627E;&#x5C06;&#x5BFC;&#x81F4;&#x76F4;&#x63A5;&#x547D;&#x4E2D;&#xFF0C;&#x56E0;&#x6B64;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;o(1)&#x6267;&#x884C;&#x67E5;&#x627E;&#x3002;&#x5982;&#x679C;&#x9884;&#x6D4B;&#x7684;&#x4F4D;&#x7F6E;&#x662F;&#x4E0D;&#x6B63;&#x786E;&#x7684;&#xFF0C;&#x505A;&#x6307;&#x6570;&#x641C;&#x7D22;&#x627E;&#x5230;&#x5B9E;&#x9645;&#x7684;&#x63D2;&#x5165;&#x4F4D;&#x7F6E;&#x3002;</p>
+<h3 id="&#x6269;&#x5C55;"><a href="#&#x6269;&#x5C55;" class="headerlink" title="&#x6269;&#x5C55;"></a>&#x6269;&#x5C55;</h3><p>&#x5F53;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x952E;&#x65F6;&#xFF0C;&#x5BC6;&#x5EA6;&#x8D85;&#x8FC7;&#x4E86;&#x9608;&#x503C;&#xFF0C;&#x5219;&#x4F1A;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#xFF0C;&#x964D;&#x4F4E;&#x5BC6;&#x5EA6;</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">procedure Expand</span><br><span class="line">	<span class="keyword">if</span> GappedArray == <span class="literal">true</span> then</span><br><span class="line">		expanded_size = keys.size * <span class="number">1</span>/d		<span class="comment">/*d&#x662F;&#x5BC6;&#x5EA6;&#x4E0A;&#x9650;&#xFF0C;d=key_nums/keys.size,&#x6545;expanded_size = (keys.size)&#xB2;/key_nums&#xFF0C;&#x6269;&#x5C55;&#x540E;&#x7684;&#x5BC6;&#x5EA6;&#x4E3A;d&#xB2;*/</span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> PackedMemoryArray == <span class="literal">true</span> then</span><br><span class="line">		expanded_size = keys.size * <span class="number">2</span></span><br><span class="line">	end <span class="keyword">if</span></span><br><span class="line">	<span class="comment">/* allocate a new expanded array */</span></span><br><span class="line">	expanded_keys = <span class="built_in">array</span>(size=expanded_size)</span><br><span class="line">	model = <span class="comment">/* train linear model on keys */</span></span><br><span class="line">	expansion_factor = expanded_size / num_keys	<span class="comment">/*expansion_factor = (keys.size)&#xB2;/(key_nums)&#xB2; = 1/d&#xB2;*/</span></span><br><span class="line">	model *= expansion_factor	<span class="comment">/*scale model*/</span></span><br><span class="line">	<span class="keyword">for</span> key : keys <span class="keyword">do</span></span><br><span class="line">		ModelBasedInsert(key)</span><br><span class="line">	end <span class="keyword">for</span></span><br><span class="line">	keys = expanded_keys</span><br><span class="line">end procedure</span><br><span class="line"></span><br><span class="line">procedure  ModelBasedInsert(key) </span><br><span class="line">	insert_pos = model.predict(key)</span><br><span class="line">	<span class="keyword">if</span> keys[insert_pos] is occupied then</span><br><span class="line">		insert_pos = first gap to right of predicted_pos</span><br><span class="line">	end <span class="keyword">if</span></span><br><span class="line">	keys[insert_pos] = key</span><br><span class="line">end procedure</span><br></pre></td></tr></table></figure>
+<h3 id="&#x63D2;&#x5165;&#x7684;&#x6700;&#x574F;&#x60C5;&#x51B5;"><a href="#&#x63D2;&#x5165;&#x7684;&#x6700;&#x574F;&#x60C5;&#x51B5;" class="headerlink" title="&#x63D2;&#x5165;&#x7684;&#x6700;&#x574F;&#x60C5;&#x51B5;"></a>&#x63D2;&#x5165;&#x7684;&#x6700;&#x574F;&#x60C5;&#x51B5;</h3><p>&#x57FA;&#x4E8E;&#x6A21;&#x578B;&#x7684;&#x63D2;&#x5165;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x95F4;&#x9699;&#x7684;&#x957F;&#x8FDE;&#x7EED;&#x533A;&#x57DF;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A;&#x5B8C;&#x5168;&#x586B;&#x5145;&#x533A;&#x57DF;&#x3002;&#x56FE;3&#x663E;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x5B8C;&#x5168;&#x586B;&#x5145;&#x533A;&#x57DF;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x63D2;&#x5165;&#x5230;&#x4E00;&#x4E2A;&#x5B8C;&#x5168;&#x586B;&#x5145;&#x7684;&#x533A;&#x57DF;&#x9700;&#x8981;&#x79FB;&#x52A8;&#x5176;&#x4E2D;&#x591A;&#x8FBE;&#x4E00;&#x534A;&#x7684;&#x5143;&#x7D20;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F3A;&#x53E3;&#xFF0C;&#x8FD9;&#x5728;&#x6700;&#x574F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x9700;&#x8981;o(n)&#x65F6;&#x95F4;&#x3002;&#x6839;&#x636E;&#x7ECF;&#x9A8C;&#xFF0C;&#x5B8C;&#x5168;&#x586B;&#x5145;&#x7684;&#x533A;&#x57DF;&#x53EF;&#x4EE5;&#x663E;&#x8457;&#x589E;&#x52A0;&#x95F4;&#x9699;&#x9635;&#x5217;&#x7684;&#x63D2;&#x5165;&#x65F6;&#x95F4;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x5C06;&#x63CF;&#x8FF0;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x66F4;&#x597D;&#x7684;&#x6700;&#x574F;&#x60C5;&#x51B5;&#x63D2;&#x5165;&#x7684;&#x66FF;&#x4EE3;&#x7ED3;&#x6784;&#x3002;</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905-2.jpg" alt="&#x56FE;3" title="">
+                </div>
+                <div class="image-caption">&#x56FE;3</div>
+            </figure>
+<h2 id="Paked-Memory-Array-PMA"><a href="#Paked-Memory-Array-PMA" class="headerlink" title="Paked Memory Array(PMA)"></a>Paked Memory Array(PMA)</h2><p>PMA&#x7684;&#x8BBE;&#x8BA1;&#x76EE;&#x7684;&#x662F;&#x5728;&#x5143;&#x7D20;&#x4E4B;&#x95F4;&#x5747;&#x5300;&#x5730;&#x7559;&#x51FA;&#x95F4;&#x9699;&#xFF0C;&#x5E76;&#x5728;&#x63D2;&#x5165;&#x65B0;&#x5143;&#x7D20;&#x65F6;&#x4FDD;&#x6301;&#x8FD9;&#x79CD;&#x5C5E;&#x6027;&#x3002;</p>
+<h3 id="&#x63D2;&#x5165;-1"><a href="#&#x63D2;&#x5165;-1" class="headerlink" title="&#x63D2;&#x5165;"></a>&#x63D2;&#x5165;</h3><p>PMA&#x4E0E;Gapped Array&#x7684;&#x9664;&#x4E86;&#x6574;&#x4F53;&#x7ED3;&#x6784;&#x7C7B;&#x4F3C;&#x4EE5;&#x5916;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x63D2;&#x5165;&#x65B9;&#x5F0F;&#x4E5F;&#x5F88;&#x7C7B;&#x4F3C;&#xFF1A;</p>
+<ol>
+<li>GA&#x5728;&#x63D2;&#x5165;&#x4E4B;&#x524D;&#x5148;&#x68C0;&#x67E5;&#x6570;&#x7EC4;&#x5BC6;&#x5EA6;&#x662F;&#x5426;&#x5230;&#x8FBE;&#x9608;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x8D85;&#x8FC7;&#x5219;&#x8FDB;&#x884C;&#x6269;&#x5C55;</li>
+<li>GA&#x5728;&#x63D2;&#x5165;&#x5931;&#x8D25;&#x540E;&#xFF0C;&#x5728;&#x9644;&#x8FD1;&#x641C;&#x7D22;&#x95F4;&#x9699;&#x8FDB;&#x884C;&#x63D2;&#x5165;</li>
+<li>&#x5982;&#x679C;PMA&#x63D2;&#x5165;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x5BC6;&#x5EA6;&#x5230;&#x8FBE;&#x9608;&#x503C;&#xFF0C;&#x8981;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#xFF0C;&#x800C;&#x6269;&#x5C55;&#x4E4B;&#x540E;&#x7684;&#x975E;&#x7A7A;&#x9879;&#x4E24;&#x8FB9;&#x5FC5;&#x4E3A;&#x7A7A;</li>
+<li>PMA&#x5728;&#x63D2;&#x5165;&#x5931;&#x8D25;&#x540E;&#xFF0C;&#x8FDB;&#x884C;&#x6269;&#x5C55;</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> {</span> </span><br><span class="line">	keys[]; </span><br><span class="line">	num_keys;</span><br><span class="line">    d;</span><br><span class="line">    model; </span><br><span class="line">}</span><br><span class="line"><span class="function">procedure <span class="title">GAInsert</span><span class="params">(key)</span></span></span><br><span class="line">	if num_keys / keys.size &gt;= d then</span><br><span class="line">		Expand() <span class="comment">/* See Alg. 3 */</span></span><br><span class="line">	end <span class="keyword">if</span></span><br><span class="line">	predicted_pos = model.predict(key)</span><br><span class="line">	<span class="comment">/* check for sorted order */</span></span><br><span class="line">	insert_pos = CorrectInsertPosition(predicted_pos)</span><br><span class="line">	<span class="keyword">if</span> keys[insert_pos] is occupied then</span><br><span class="line">		MakeGap(insert_pos) <span class="comment">/* described in text */</span></span><br><span class="line">	end <span class="keyword">if</span></span><br><span class="line">	keys[insert_pos] = key</span><br><span class="line">	num_keys++</span><br><span class="line">end procedure</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> {</span></span><br><span class="line">	keys[];</span><br><span class="line">    num_keys;</span><br><span class="line">    pma_density_bounds;</span><br><span class="line">    model</span><br><span class="line">}</span><br><span class="line"><span class="function">procedure <span class="title">PMAInsert</span><span class="params">(key)</span></span></span><br><span class="line"><span class="function">	predicted_pos </span>= model.predict(key)</span><br><span class="line">	<span class="comment">/* check for sorted order */</span></span><br><span class="line">	insert_pos = CorrectInsertPosition(predicted_pos)</span><br><span class="line">	insert_status = InsertPMA(key, insert_pos)</span><br><span class="line">	<span class="keyword">if</span> insert_status == failure then</span><br><span class="line">		<span class="comment">/* density bounds violated */</span></span><br><span class="line">		Expand()	<span class="comment">/* See Alg. 3 */</span></span><br><span class="line">		pma.insert(key, insert_pos) <span class="comment">/*will succeed*/</span></span><br><span class="line"> 	end <span class="keyword">if</span></span><br><span class="line">	num_keys++</span><br><span class="line">end procedure</span><br></pre></td></tr></table></figure>
+<h3 id="&#x67E5;&#x627E;-1"><a href="#&#x67E5;&#x627E;-1" class="headerlink" title="&#x67E5;&#x627E;"></a>&#x67E5;&#x627E;</h3><p>&#x67E5;&#x627E;&#x65B9;&#x6CD5;&#x4E0E;GA&#x7C7B;&#x4F3C;</p>
+<h3 id="&#x6269;&#x5C55;-1"><a href="#&#x6269;&#x5C55;-1" class="headerlink" title="&#x6269;&#x5C55;"></a>&#x6269;&#x5C55;</h3><p>PMA&#x6269;&#x5C55;&#x4E4B;&#x540E;&#x7684;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x4E3A;&#x4E4B;&#x524D;&#x7684;&#x4E24;&#x500D;&#xFF0C;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#x4E0E;GA&#x7684;&#x6269;&#x5C55;&#x65B9;&#x5F0F;&#x76F8;&#x540C;&#xFF0C;&#x800C;PMA&#x6269;&#x5C55;&#x4E4B;&#x540E;&#x7684;&#x5BC6;&#x5EA6;&#x4E0D;&#x786E;&#x5B9A;&#x3002;&#x5BC6;&#x5EA6;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x539F;&#x6765;&#x7684;1/2&#xFF0C;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x8FD1;&#x4F3C;&#x4E8E;&#x539F;&#x6765;&#x7684;&#x5BC6;&#x5EA6;&#x3002;</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905-3.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>&#x63D2;&#x5165;14</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905-4.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>&#x63D2;&#x5165;15&#xFF0C;&#x53D1;&#x73B0;&#x5931;&#x8D25;&#xFF0C;&#x8FDB;&#x884C;&#x6269;&#x5C55;</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905-5.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>&#x91CD;&#x65B0;&#x63D2;&#x5165;15</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905-6.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="Adaptive-RMI&#xFF08;&#x81EA;&#x9002;&#x5E94;&#x9012;&#x5F52;&#x6A21;&#x578B;&#x7D22;&#x5F15;&#xFF09;"><a href="#Adaptive-RMI&#xFF08;&#x81EA;&#x9002;&#x5E94;&#x9012;&#x5F52;&#x6A21;&#x578B;&#x7D22;&#x5F15;&#xFF09;" class="headerlink" title="Adaptive RMI&#xFF08;&#x81EA;&#x9002;&#x5E94;&#x9012;&#x5F52;&#x6A21;&#x578B;&#x7D22;&#x5F15;&#xFF09;"></a>Adaptive RMI&#xFF08;&#x81EA;&#x9002;&#x5E94;&#x9012;&#x5F52;&#x6A21;&#x578B;&#x7D22;&#x5F15;&#xFF09;</h2><p><img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905.jpg" style="zoom: 25%;"></p>
+<h3 id="&#x521D;&#x59CB;&#x5316;"><a href="#&#x521D;&#x59CB;&#x5316;" class="headerlink" title="&#x521D;&#x59CB;&#x5316;"></a>&#x521D;&#x59CB;&#x5316;</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">constant: max_keys</span><br><span class="line">procedure Initialize(node)</span><br><span class="line">	node.model = <span class="comment">/*train linear model*/</span></span><br><span class="line">	partitions = node.get_partitions() </span><br><span class="line">	it = <span class="comment">/* iterator over partitions */</span></span><br><span class="line">	while it.has_next() <span class="keyword">do</span></span><br><span class="line">		<span class="keyword">partition</span> = it.next()</span><br><span class="line">		<span class="keyword">if</span> partition.size &gt; max_keys <span class="keyword">then</span> 	<span class="comment">/*&#x5982;&#x679C;&#x6B64;&#x5206;&#x533A;&#x7684;key&#x591A;&#x4E8E;&#x9608;&#x503C;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x8FED;&#x4EE3;&#x5730;&#x5206;&#x5272;*/</span></span><br><span class="line">			<span class="keyword">child</span> = InnerNode(<span class="keyword">keys</span> = <span class="keyword">partition</span>)</span><br><span class="line">			Initialize(<span class="keyword">child</span>)</span><br><span class="line">		<span class="keyword">else</span>	<span class="comment">/*&#x5982;&#x679C;&#x6B64;&#x5206;&#x533A;&#x7684;key&#x5C11;&#x4E8E;&#x9608;&#x503C;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x53F6;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x5B50;&#x8282;&#x70B9;*/</span></span><br><span class="line">			<span class="keyword">begin</span> = it.current()</span><br><span class="line">			accumulated_size = partition.size</span><br><span class="line">			<span class="keyword">while</span> accumulated_size &lt; max_keys <span class="keyword">do</span></span><br><span class="line">				<span class="keyword">partition</span> = it.next()</span><br><span class="line">				accumulated_size += partition.size</span><br><span class="line">			<span class="keyword">end</span> <span class="keyword">while</span></span><br><span class="line">			<span class="keyword">end</span> = it.prev()</span><br><span class="line">			<span class="keyword">child</span> = LeafNode(<span class="keyword">keys</span>=<span class="keyword">partitions</span>[<span class="keyword">begin</span>:<span class="keyword">end</span>])</span><br><span class="line">		<span class="keyword">end</span> <span class="keyword">if</span></span><br><span class="line">	<span class="keyword">end</span> <span class="keyword">while</span></span><br><span class="line"><span class="keyword">end</span> <span class="keyword">procedure</span></span><br></pre></td></tr></table></figure>
+<h3 id="&#x63D2;&#x5165;-2"><a href="#&#x63D2;&#x5165;-2" class="headerlink" title="&#x63D2;&#x5165;"></a>&#x63D2;&#x5165;</h3><p>&#x7ECF;&#x8FC7;&#x591A;&#x6B21;&#x63D2;&#x5165;&#xFF0C;&#x5982;&#x679C;&#x5BC6;&#x94A5;&#x7684;&#x5206;&#x914D;&#x786E;&#x5B9E;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#xFF0C;&#x5373;&#x5219;&#x968F;&#x7740;&#x63D2;&#x5165;&#x7684;&#x53D1;&#x751F;&#xFF0C;&#x4E00;&#x4E9B;&#x53F6;&#x5B50;&#x5C06;&#x53D8;&#x5F97;&#x8D8A;&#x6765;&#x8D8A;&#x5BB9;&#x6613;&#x88AB;&#x5B8C;&#x5168;&#x88C5;&#x6EE1;&#x7684;&#x533A;&#x57DF;&#x4F7F;&#x7528;&#x3002;&#x901A;&#x8FC7;&#x52A8;&#x6001;&#x63D2;&#x5165;&#xFF0C;B + Tree&#x901A;&#x8FC7;&#x62C6;&#x5206;&#x5B8C;&#x6574;&#x8282;&#x70B9;&#x6765;&#x9002;&#x5E94;&#x81EA;&#x8EAB;&#x3002;&#x63D2;&#x5165;&#x8282;&#x70B9;&#x62C6;&#x5206;&#x540C;&#x6837;&#x88AB;&#x5E94;&#x7528;&#x4E8E;ALEX&#xFF0C;&#x800C;&#x4E0E;B+&#x6811;&#x76F8;&#x6BD4;&#xFF0C;&#x62C6;&#x5206;&#x8282;&#x70B9;&#x65F6;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x5E73;&#x8861;ALEX&#x3002;</p>
+<p>&#x7279;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x5982;&#x679C;&#x63D2;&#x5165;&#x5C06;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x63A8;&#x5230;&#x5176;&#x6700;&#x5927;&#x7ED1;&#x5B9A;&#x952E;&#x6570;&#x4E4B;&#x4E0A;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C06;&#x62C6;&#x5206;&#x53F6;&#x5B50;&#x6570;&#x636E;&#x8282;&#x70B9;</li>
+<li>&#x5728;&#x62C6;&#x5206;&#x65F6;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x5B50;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x6570;&#x91CF;&#x662F;&#x4E00;&#x4E2A;&#x8D85;&#x53C2;&#x6570;C&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x81EA;&#x9002;&#x5E94;RMI&#x521D;&#x59CB;&#x5316;&#x7684;&#x5206;&#x533A;&#x6570;&#x91CF;</li>
+<li>&#x63D2;&#x5165;&#x4E0A;&#x7684;&#x8282;&#x70B9;&#x62C6;&#x5206;&#x8FD8;&#x5141;&#x8BB8;ALEX&#x5904;&#x7406;&#x201C;&#x51B7;&#x542F;&#x52A8;&#x201D;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6570;&#x636E;&#x6700;&#x521D;&#x4E3A;&#x7A7A;&#xFF0C;&#x5E76;&#x4EE5;&#x589E;&#x91CF;&#x65B9;&#x5F0F;&#x6DFB;&#x52A0;&#x65B0;&#x5BC6;&#x94A5;</li>
+</ol>
+<h2 id="&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x8BC4;&#x4F30;"><a href="#&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x8BC4;&#x4F30;" class="headerlink" title="&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x8BC4;&#x4F30;"></a>&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x8BC4;&#x4F30;</h2><h3 id="&#x6570;&#x636E;&#x96C6;"><a href="#&#x6570;&#x636E;&#x96C6;" class="headerlink" title="&#x6570;&#x636E;&#x96C6;"></a>&#x6570;&#x636E;&#x96C6;</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905-7.PNG" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="&#x7ED3;&#x679C;"><a href="#&#x7ED3;&#x679C;" class="headerlink" title="&#x7ED3;&#x679C;"></a>&#x7ED3;&#x679C;</h3><h3 id=""><a href="#" class="headerlink" title=""></a><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905-8.PNG" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></h3><p>ALEX&#x5728;&#x56DB;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#x7684;&#x8BFB;&#x5199;&#x80FD;&#x529B;&#x6BD4;B+&#x6811;&#x8981;&#x597D;&#x4E00;&#x4E9B;&#xFF0C;&#x751A;&#x81F3;&#x7D22;&#x5F15;&#x7684;&#x5360;&#x7528;&#x7A7A;&#x95F4;&#x4E5F;&#x8981;&#x6BD4;B+&#x6811;&#x8981;&#x5C0F;&#x4E00;&#x4E9B;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;&#x76F8;&#x6BD4;&#x4E8E;B+&#x6811;&#xFF0C;ALEX&#x5728;&#x8FD9;&#x56DB;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#x5168;&#x9762;&#x9886;&#x5148;&#x3002;</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2019/11/25/ALEX&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/1905-9.PNG" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>&#x5F53;&#x6269;&#x5C55;&#x5230;&#x66F4;&#x5927;&#x7684;&#x6570;&#x636E;&#x96C6;&#x65F6;&#xFF0C;ALEX&#x4FDD;&#x6301;&#x9AD8;&#x541E;&#x5410;&#x91CF;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x8F7B;&#x5EA6;&#x7684;&#x5206;&#x5E03;&#x504F;&#x79FB;&#x65B9;&#x9762;&#x5177;&#x6709;&#x7ADE;&#x4E89;&#x529B;&#xFF0C;&#x4F46;&#x5728;&#x987A;&#x5E8F;&#x63D2;&#x5165;&#x65F6;&#x6027;&#x80FD;&#x8F83;&#x5DEE;&#xFF08;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;&#x8981;&#x4E0D;&#x505C;&#x7684;&#x8FDB;&#x884C;&#x62C6;&#x5206;&#x8282;&#x70B9;&#x7684;&#x539F;&#x56E0;&#xFF09;&#x3002;</p>
+<h2 id="&#x4E2A;&#x4EBA;&#x603B;&#x7ED3;"><a href="#&#x4E2A;&#x4EBA;&#x603B;&#x7ED3;" class="headerlink" title="&#x4E2A;&#x4EBA;&#x603B;&#x7ED3;"></a>&#x4E2A;&#x4EBA;&#x603B;&#x7ED3;</h2><h3 id="&#x4F18;&#x70B9;&#xFF1A;"><a href="#&#x4F18;&#x70B9;&#xFF1A;" class="headerlink" title="&#x4F18;&#x70B9;&#xFF1A;"></a>&#x4F18;&#x70B9;&#xFF1A;</h3><p>&#x603B;&#x7684;&#x6765;&#x8BF4;&#x4E24;&#x79CD;&#x6570;&#x7EC4;&#x7ED3;&#x6784;&#x4EE5;&#x7A7A;&#x95F4;&#x6362;&#x53D6;&#x63D2;&#x5165;&#x65F6;&#x95F4;&#xFF0C;&#x800C;&#x4E14;&#x5BF9;&#x4E8E;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x5206;&#x5E03;&#x6709;&#x7740;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x7EC4;&#x4E0E;&#x4E4B;&#x76F8;&#x914D;&#x3002;&#x5982;&#x679C;&#x662F;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x5BC6;&#x96C6;&#x5206;&#x5E03;&#x533A;&#x57DF;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Gapped Array&#xFF1B;&#x800C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x975E;&#x53F6;&#x8282;&#x70B9;&#x7684;&#x6570;&#x636E;&#x5305;&#x542B;&#x4E86;&#x7C7B;&#x4F3C;[1,2,3,4,5,6&#xB7;&#xB7;&#xB7;]&#x8FD9;&#x79CD;&#x5206;&#x5E03;&#x5BC6;&#x96C6;&#x7684;&#x6570;&#x636E;&#x5C31;&#x5207;&#x6362;&#x81F3;PMA&#x7ED3;&#x6784;&#x3002;</p>
+<p>&#x540C;&#x65F6;ARMI&#x63D0;&#x4F9B;&#x4E86;&#x53EF;&#x6269;&#x5C55;&#x7684;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#x7528;&#x6765;&#x7EF4;&#x6301;&#x5728;&#x53F6;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x641C;&#x7D22;&#x65F6;&#x95F4;&#x3002;</p>
+<h3 id="&#x7F3A;&#x70B9;&#xFF1A;"><a href="#&#x7F3A;&#x70B9;&#xFF1A;" class="headerlink" title="&#x7F3A;&#x70B9;&#xFF1A;"></a>&#x7F3A;&#x70B9;&#xFF1A;</h3><p>&#x4E24;&#x79CD;&#x6570;&#x7EC4;&#x7ED3;&#x6784;&#x7531;&#x4E8E;&#x6709;&#x8BB8;&#x591A;&#x7684;&#x7A7A;&#x8282;&#x70B9;&#xFF0C;&#x56E0;&#x6B64;&#x5373;&#x4F7F;&#x6700;&#x540E;&#x627E;&#x5230;&#x4E86;&#x76EE;&#x6807;key&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5728;&#x8F93;&#x51FA;&gt;=&#x76EE;&#x6807;key&#x6216;&#x8005;&lt;=&#x76EE;&#x6807;key&#x7684;key&#x65F6;&#xFF0C;&#x4ECD;&#x7136;&#x9700;&#x8981;&#x7B5B;&#x9009;&#x6389;&#x90A3;&#x4E9B;key&#x4E3A;&#x7A7A;&#x7684;&#x6570;&#x636E;&#x5143;&#x7D20;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7279;&#x6B8A;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x662F;O(n)&#x7684;&#x3002;&#x800C;&#x5728;&#x8FD9;&#x7247;&#x8BBA;&#x6587;&#x4E2D;&#x6CA1;&#x6709;&#x770B;&#x5230;&#x8FD9;&#x4E24;&#x79CD;&#x6570;&#x7EC4;&#x5177;&#x4F53;&#x662F;&#x4F55;&#x79CD;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x3002;</p>
+<p>&#x7531;&#x4E8E;ARMI&#x7684;&#x53F6;&#x5B50;&#x7ED3;&#x70B9;&#x5728;&#x62C6;&#x5206;&#x65F6;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x5E73;&#x8861;&#x6574;&#x4E2A;ALEX&#xFF0C;&#x56E0;&#x6B64;&#x867D;&#x7136;ARMI&#x7EF4;&#x6301;&#x4F4F;&#x4E86;&#x5728;&#x53F6;&#x8282;&#x70B9;&#x7684;&#x641C;&#x7D22;&#x65F6;&#x95F4;&#xFF0C;&#x4F46;&#x4E0E;&#x6B64;&#x540C;&#x65F6;&#xFF0C;&#x7531;&#x4E8E;&#x6574;&#x4E2A;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#x7684;&#x6BCF;&#x4E00;&#x5C42;&#x57FA;&#x672C;&#x4E0A;&#x53EA;&#x6709;&#x8D85;&#x53C2;&#x6570;C&#x4E2A;&#x53F6;&#x5B50;&#x7ED3;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x5230;&#x8FBE;&#x53F6;&#x8282;&#x70B9;&#x7684;&#x65F6;&#x95F4;&#x76F8;&#x6BD4;&#x4E8E;&#x539F;&#x59CB;&#x7684;RMI&#x6765;&#x8BF4;&#x66F4;&#x957F;&#x4E86;&#x3002;&#x968F;&#x7740;&#x63D2;&#x5165;&#x6570;&#x636E;&#x65F6;&#x7684;&#x589E;&#x591A;&#xFF0C;ARMI&#x7684;&#x6DF1;&#x5EA6;&#x8D8A;&#x6765;&#x8D8A;&#x6DF1;&#xFF0C;&#x5230;&#x8FBE;&#x53F6;&#x8282;&#x70B9;&#x7684;&#x65F6;&#x95F4;&#x8D8A;&#x62C9;&#x8D8A;&#x957F;&#xFF0C;&#x641C;&#x7D22;&#x65F6;&#x95F4;&#x4E5F;&#x8D8A;&#x6765;&#x8D8A;&#x957F;&#x3002;&#x5982;&#x679C;&#x80FD;&#x5728;&#x7279;&#x5B9A;&#x65F6;&#x95F4;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x5E73;&#x8861;&#x7684;&#x6574;&#x4E2A;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x67E5;&#x627E;&#x6548;&#x7387;&#x4E5F;&#x8BB8;&#x4F1A;&#x4E00;&#x76F4;&#x7EF4;&#x6301;&#x4E0B;&#x53BB;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x9884;&#x5148;&#x5B9A;&#x4E49;&#x8D85;&#x53C2;&#x6570;C&#xFF08;&#x62C6;&#x5206;&#x65F6;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x5B50;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x6570;&#x91CF;&#xFF09;&#xFF0C;&#x8D85;&#x53C2;&#x6570;&#x8D8A;&#x5927;&#xFF0C;&#x6574;&#x4E2A;&#x7ED3;&#x6784;&#x8D8A;&#x80D6;&#xFF0C;&#x6574;&#x4E2A;&#x6811;&#x5F62;&#x4E0A;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x4E0E;&#x903B;&#x8F91;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x5C31;&#x9605;&#x8BFB;&#xFF0C;&#x540C;&#x65F6;&#x5728;&#x62C6;&#x5206;&#x8282;&#x70B9;&#x65F6;&#x7684;&#x65F6;&#x95F4;&#x4E5F;&#x8D8A;&#x4E45;&#xFF0C;&#x4E5F;&#x5BB9;&#x6613;&#x9020;&#x6210;&#x8BB8;&#x591A;&#x65E0;&#x5FC5;&#x8981;&#x7684;&#x53F6;&#x5B50;&#x7ED3;&#x70B9;&#x3002;&#x4F46;&#x4E0E;&#x6B64;&#x540C;&#x65F6;&#xFF0C;&#x8D85;&#x53C2;&#x6570;&#x8D8A;&#x5927;&#xFF0C;&#x5206;&#x914D;&#x5230;&#x6BCF;&#x4E2A;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x7684;key&#x8D8A;&#x5C11;&#xFF0C;&#x5728;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x641C;&#x7D22;&#x65F6;&#x95F4;&#x4E5F;&#x8D8A;&#x5C11;&#x3002;</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-29T03:53:59.904Z" itemprop="dateUpdated">2019-11-29 11:53:59</time>
+</span><br>
+
+
+        
+        原文地址：<a href="/2019/11/25/ALEX学习笔记/" target="_blank" rel="external">http://infinitymiao.cn/2019/11/25/ALEX学习笔记/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://infinitymiao.cn">
+            <img src="/img/avatar.jpg" alt="InfinityMiao">
+            InfinityMiao
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ALEX/">ALEX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learned-Index/">Learned Index</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/2019/11/25/ALEX学习笔记/&title=《ALEX学习笔记》 — InfinityMiao's Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/2019/11/25/ALEX学习笔记/&title=《ALEX学习笔记》 — InfinityMiao's Blog&source=InfinityMiao的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/2019/11/25/ALEX学习笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ALEX学习笔记》 — InfinityMiao's Blog&url=http://infinitymiao.cn/2019/11/25/ALEX学习笔记/&via=http://infinitymiao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/2019/11/25/ALEX学习笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/12/learned-index学习笔记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">learned index学习笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>InfinityMiao &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/2019/11/25/ALEX学习笔记/&title=《ALEX学习笔记》 — InfinityMiao's Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/2019/11/25/ALEX学习笔记/&title=《ALEX学习笔记》 — InfinityMiao's Blog&source=InfinityMiao的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/2019/11/25/ALEX学习笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ALEX学习笔记》 — InfinityMiao's Blog&url=http://infinitymiao.cn/2019/11/25/ALEX学习笔记/&via=http://infinitymiao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/2019/11/25/ALEX学习笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3ay2rDUAwFwPz/T7vbQLFzJLmFyONVcCBX04Wqx3294ud4e67f/P72/X31lJsfDAyMr2Ucl09ywHXQ19TrX0hiw8DAeA7jLLjkyGtAL1nnsWFgYGBUfzoJt5egMTAwMHJGkjTzBjVPxBgYGBhJE9srGfM0OilDMTAwdjPyqfv/f/6T/QYGBsZXMY7iU11w9krGclQYGBirGXmCSw7LL0xM2KenYGBgPICRh5ivB/JmNV8tROM2DAyM1Yz82sQkRSZhJX/E04SLgYGxjtGbZeVryEmBWE3ZGBgYz2H0yr48oOQaR3VFgYGBsZsxGdznCTRvcZtIDAyMBzCSFNkLPR+c9VI5BgbGbkbvmkWeBOdLgujfAAYGxgMYeduZXLCYJN8cdtq+YmBgrGPkmLyxTBJ3dRkQ7TEwMDBWM3rF2bwF7bW4H1I2BgbGakavBc2/rS4J8uUBBgbGbkbvOunkqmtvzfChYMXAwFjNyIf788sTeSiTQR4GBsZWRrWKnCTEQvPZKxAxMDAeySh0vYMxWbIcLa8EMDAwljKqBWLyOQ93tITAwMBYyjiKT/VqRa8BbvbfGBgYSxnVUm++dMyXELddtsDAwFjBuDfJ9lahN5SPGBgYD2BM5lfXB1RLwN5wEAMDA6N3fPXqWHXwh4GBgdFrJidtalJQRvsNDAyMpYwk/SXve7O9asuKgYHxNEavdcyHbr2SMY8BAwNjNeMHMipLqZHn15sAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'InfinityMiao's Blog';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'InfinityMiao's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

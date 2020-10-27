@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>C++笔记 | InfinityMiao&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="C++">
+    <meta name="description" content="&amp;#x679A;&amp;#x4E3E;&amp;#x679A;&amp;#x4E3E;&amp;#x7C7B;&amp;#x578B;(enumeration)&amp;#x662F;C++&amp;#x4E2D;&amp;#x7684;&amp;#x4E00;&amp;#x79CD;&amp;#x6D3E;&amp;#x751F;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578B;&amp;#xFF0C;&amp;#x5B83;&amp;#x662F;&amp;#x7531;&amp;#x7528;&amp;#x6237;">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++笔记">
+<meta property="og:url" content="http://infinitymiao.cn/2019/12/25/C++笔记/index.html">
+<meta property="og:site_name" content="InfinityMiao&#39;s Blog">
+<meta property="og:description" content="&amp;#x679A;&amp;#x4E3E;&amp;#x679A;&amp;#x4E3E;&amp;#x7C7B;&amp;#x578B;(enumeration)&amp;#x662F;C++&amp;#x4E2D;&amp;#x7684;&amp;#x4E00;&amp;#x79CD;&amp;#x6D3E;&amp;#x751F;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578B;&amp;#xFF0C;&amp;#x5B83;&amp;#x662F;&amp;#x7531;&amp;#x7528;&amp;#x6237;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-27T15:12:09.708Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++笔记">
+<meta name="twitter:description" content="&amp;#x679A;&amp;#x4E3E;&amp;#x679A;&amp;#x4E3E;&amp;#x7C7B;&amp;#x578B;(enumeration)&amp;#x662F;C++&amp;#x4E2D;&amp;#x7684;&amp;#x4E00;&amp;#x79CD;&amp;#x6D3E;&amp;#x751F;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578B;&amp;#xFF0C;&amp;#x5B83;&amp;#x662F;&amp;#x7531;&amp;#x7528;&amp;#x6237;">
+    
+        <link rel="alternate" type="application/atom+xml" title="InfinityMiao&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/ img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">InfinityMiao</h5>
+          <a href="mailto:524937890@qq.com" title="524937890@qq.com" class="mail">524937890@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archive"  >
+                <i class="icon icon-lg icon-archive"></i>
+                Archive
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/infinitymiao" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">C++笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">C++笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-25T05:50:10.000Z" itemprop="datePublished" class="page-time">
+  2019-12-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#枚举"><span class="post-toc-number">1.</span> <span class="post-toc-text">枚举</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#变量"><span class="post-toc-number">2.</span> <span class="post-toc-text">变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类-amp-对象"><span class="post-toc-number">3.</span> <span class="post-toc-text">类&amp;对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重载"><span class="post-toc-number">4.</span> <span class="post-toc-text">重载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数重载"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">函数重载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运算符重载"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">运算符重载</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数返回数组"><span class="post-toc-number">5.</span> <span class="post-toc-text">函数返回数组</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数返回已存在的数组"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">函数返回已存在的数组</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数返回未存在的数组"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">函数返回未存在的数组</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-C++笔记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">C++笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-25 13:50:10" datetime="2019-12-25T05:50:10.000Z"  itemprop="datePublished">2019-12-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="&#x679A;&#x4E3E;"><a href="#&#x679A;&#x4E3E;" class="headerlink" title="&#x679A;&#x4E3E;"></a>&#x679A;&#x4E3E;</h2><p>&#x679A;&#x4E3E;&#x7C7B;&#x578B;(enumeration)&#x662F;C++&#x4E2D;&#x7684;&#x4E00;&#x79CD;&#x6D3E;&#x751F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x662F;&#x7531;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x82E5;&#x5E72;&#x679A;&#x4E3E;&#x5E38;&#x91CF;&#x7684;&#x96C6;&#x5408;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x53EA;&#x6709;&#x51E0;&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E3A;&#x679A;&#x4E3E;(enumeration)&#x7C7B;&#x578B;&#x3002;&#x6240;&#x8C13;&#x201D;&#x679A;&#x4E3E;&#x201D;&#x662F;&#x6307;&#x5C06;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x4E00;&#x4E00;&#x5217;&#x4E3E;&#x51FA;&#x6765;&#xFF0C;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x53EA;&#x80FD;&#x5728;&#x5217;&#x4E3E;&#x51FA;&#x6765;&#x7684;&#x503C;&#x7684;&#x8303;&#x56F4;&#x5185;&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x679A;&#x4E3E;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57; <strong>enum</strong>&#x3002;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x7684;&#x4E00;&#x822C;&#x5F62;&#x5F0F;&#x4E3A;&#xFF1A;</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> &#x679A;&#x4E3E;&#x540D;{ </span></span><br><span class="line">    &#x6807;&#x8BC6;&#x7B26;[=&#x6574;&#x578B;&#x5E38;&#x6570;], </span><br><span class="line">	&#x6807;&#x8BC6;&#x7B26;[=&#x6574;&#x578B;&#x5E38;&#x6570;], </span><br><span class="line">	... </span><br><span class="line">    &#x6807;&#x8BC6;&#x7B26;[=&#x6574;&#x578B;&#x5E38;&#x6570;]</span><br><span class="line">} &#x679A;&#x4E3E;&#x53D8;&#x91CF;;</span><br></pre></td></tr></table></figure>
+<p>&#x5982;&#x679C;&#x679A;&#x4E3E;&#x6CA1;&#x6709;&#x521D;&#x59CB;&#x5316;, &#x5373;&#x7701;&#x6389;&#x201D;=&#x6574;&#x578B;&#x5E38;&#x6570;&#x201D;&#x65F6;, &#x5219;&#x4ECE;&#x7B2C;&#x4E00;&#x4E2A;&#x6807;&#x8BC6;&#x7B26;&#x5F00;&#x59CB;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x989C;&#x8272;&#x679A;&#x4E3E;&#xFF0C;&#x53D8;&#x91CF; c &#x7684;&#x7C7B;&#x578B;&#x4E3A; color&#x3002;&#x6700;&#x540E;&#xFF0C;c &#x88AB;&#x8D4B;&#x503C;&#x4E3A; &#x201C;blue&#x201D;&#x3002;</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> { <span class="title">red</span>, <span class="title">green</span>, <span class="title">blue</span> } <span class="title">c</span>;</span></span><br><span class="line">c = blue;</span><br></pre></td></tr></table></figure>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x540D;&#x79F0;&#x7684;&#x503C;&#x4E3A; 0&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x540D;&#x79F0;&#x7684;&#x503C;&#x4E3A; 1&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x540D;&#x79F0;&#x7684;&#x503C;&#x4E3A; 2&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x7ED9;&#x540D;&#x79F0;&#x8D4B;&#x4E88;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x503C;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x503C;&#x5373;&#x53EF;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x679A;&#x4E3E;&#x4E2D;&#xFF0C;<strong>green</strong> &#x7684;&#x503C;&#x4E3A; 5&#x3002;</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="built_in">color</span> { <span class="built_in">red</span>, <span class="built_in">green</span>=<span class="number">5</span>, <span class="built_in">blue</span> };</span><br></pre></td></tr></table></figure>
+<p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;<strong>blue</strong> &#x7684;&#x503C;&#x4E3A; 6&#xFF0C;&#x56E0;&#x4E3A;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x540D;&#x79F0;&#x90FD;&#x4F1A;&#x6BD4;&#x5B83;&#x524D;&#x9762;&#x4E00;&#x4E2A;&#x540D;&#x79F0;&#x5927; 1&#xFF0C;&#x4F46; red &#x7684;&#x503C;&#x4F9D;&#x7136;&#x4E3A; 0&#x3002;</p>
+<h2 id="&#x53D8;&#x91CF;"><a href="#&#x53D8;&#x91CF;" class="headerlink" title="&#x53D8;&#x91CF;"></a>&#x53D8;&#x91CF;</h2><p>&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x548C;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x540D;&#x79F0;&#x53EF;&#x4EE5;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x51FD;&#x6570;&#x5185;&#xFF0C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x4F1A;&#x8986;&#x76D6;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x503C;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong>const</strong> &#x524D;&#x7F00;&#x58F0;&#x660E;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x5E38;&#x91CF;&#xFF0C;&#x4F8B;&#x5982;const int  LENGTH = 10;</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>&#x5B58;&#x50A8;&#x7C7B;</th>
+<th>&#x6CE8;&#x91CA;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auto</td>
+<td><strong>auto</strong> &#x5173;&#x952E;&#x5B57;&#x7528;&#x4E8E;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x65F6;&#x6839;&#x636E;&#x521D;&#x59CB;&#x5316;&#x8868;&#x8FBE;&#x5F0F;&#x81EA;&#x52A8;&#x63A8;&#x65AD;&#x8BE5;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x3001;&#x58F0;&#x660E;&#x51FD;&#x6570;&#x65F6;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x5360;&#x4F4D;&#x7B26;&#x3002;</td>
+</tr>
+<tr>
+<td>register</td>
+<td><strong>register</strong> &#x5B58;&#x50A8;&#x7C7B;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x5B58;&#x50A8;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#x800C;&#x4E0D;&#x662F; RAM &#x4E2D;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</td>
+</tr>
+<tr>
+<td>static</td>
+<td><strong>static</strong> &#x5B58;&#x50A8;&#x7C7B;&#x6307;&#x793A;&#x7F16;&#x8BD1;&#x5668;&#x5728;&#x7A0B;&#x5E8F;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x5185;&#x4FDD;&#x6301;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x5728;&#x6BCF;&#x6B21;&#x5B83;&#x8FDB;&#x5165;&#x548C;&#x79BB;&#x5F00;&#x4F5C;&#x7528;&#x57DF;&#x65F6;&#x8FDB;&#x884C;&#x521B;&#x5EFA;&#x548C;&#x9500;&#x6BC1;&#x3002;static &#x4FEE;&#x9970;&#x7B26;&#x4E5F;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x4E8E;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;&#x5F53; static &#x4FEE;&#x9970;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x4F1A;&#x4F7F;&#x53D8;&#x91CF;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x9650;&#x5236;&#x5728;&#x58F0;&#x660E;&#x5B83;&#x7684;&#x6587;&#x4EF6;&#x5185;&#x3002;</td>
+</tr>
+<tr>
+<td>extern</td>
+<td><strong>extern</strong> &#x5B58;&#x50A8;&#x7C7B;&#x7528;&#x4E8E;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5BF9;&#x6240;&#x6709;&#x7684;&#x7A0B;&#x5E8F;&#x6587;&#x4EF6;&#x90FD;&#x662F;&#x53EF;&#x89C1;&#x7684;&#x3002;&#x5F53;&#x60A8;&#x6709;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x4E14;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x6216;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; <em>extern</em> &#x6765;&#x5F97;&#x5230;&#x5DF2;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x6216;&#x51FD;&#x6570;&#x7684;&#x5F15;&#x7528;&#x3002;</td>
+</tr>
+<tr>
+<td>thread_local</td>
+<td>&#x4F7F;&#x7528; thread_local &#x8BF4;&#x660E;&#x7B26;&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x4EC5;&#x53EF;&#x5728;&#x5B83;&#x5728;&#x5176;&#x4E0A;&#x521B;&#x5EFA;&#x7684;&#x7EBF;&#x7A0B;&#x4E0A;&#x8BBF;&#x95EE;&#x3002; &#x53D8;&#x91CF;&#x5728;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x65F6;&#x521B;&#x5EFA;&#xFF0C;&#x5E76;&#x5728;&#x9500;&#x6BC1;&#x7EBF;&#x7A0B;&#x65F6;&#x9500;&#x6BC1;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="&#x7C7B;-amp-&#x5BF9;&#x8C61;"><a href="#&#x7C7B;-amp-&#x5BF9;&#x8C61;" class="headerlink" title="&#x7C7B;&amp;&#x5BF9;&#x8C61;"></a>&#x7C7B;&amp;&#x5BF9;&#x8C61;</h2><p>&#x7C7B;&amp;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E9B;&#x7279;&#x6027;&#xFF1A;</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span> {</span></span><br><span class="line"><span class="keyword">private</span>:<span class="comment">//&#x79C1;&#x6709;&#x6210;&#x5458;,&#x79C1;&#x6709;&#x6210;&#x5458;&#x53EA;&#x5728;&#x7C7B;&#x548C;&#x53CB;&#x5143;&#x51FD;&#x6570;&#x4E2D;&#x662F;&#x53EF;&#x8BBF;&#x95EE;&#x7684;&#x3002;</span></span><br><span class="line">    <span class="keyword">double</span> width;</span><br><span class="line"><span class="keyword">public</span>:<span class="comment">//&#x516C;&#x6709;&#x6210;&#x5458;</span></span><br><span class="line">    <span class="comment">//&#x5F53;&#x6211;&#x4EEC;&#x58F0;&#x660E;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x4E3A;&#x9759;&#x6001;&#x65F6;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x65E0;&#x8BBA;&#x521B;&#x5EFA;&#x591A;&#x5C11;&#x4E2A;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x9759;&#x6001;&#x6210;&#x5458;&#x90FD;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#x3002;&#x9759;&#x6001;&#x6210;&#x5458;&#x5728;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x4E2D;&#x662F;&#x5171;&#x4EAB;&#x7684;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> objectCount;</span><br><span class="line">    <span class="keyword">double</span> length;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getWidth</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setWidth</span><span class="params">( <span class="keyword">double</span> wid )</span></span>{</span><br><span class="line">        width = wid;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;&#x76F4;&#x63A5;length = len,width = wid</span></span><br><span class="line">    Box(<span class="keyword">double</span> len, <span class="keyword">double</span> wid): length(len), width(wid){</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;The length is &quot;</span>&lt;&lt;length&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    };</span><br><span class="line">    ~Box(){<span class="comment">//&#x6790;&#x6784;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x7C7B;&#x88AB;&#x9500;&#x6BC1;&#x65F6;&#x8C03;&#x7528;</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;The object is destroyed&quot;</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">protected</span>:<span class="comment">//&#x53D7;&#x4FDD;&#x62A4;&#x6210;&#x5458;,&#x4FDD;&#x62A4;&#x6210;&#x5458;&#x5728;&#x6D3E;&#x751F;&#x7C7B;&#xFF08;&#x5373;&#x5B50;&#x7C7B;&#xFF09;&#x4E2D;&#x662F;&#x53EF;&#x8BBF;&#x95EE;&#x7684;&#x3002;</span></span><br><span class="line">};</span><br><span class="line"><span class="keyword">double</span> Box::getWidth(){</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>-&gt;width;<span class="comment">//this&#x53EF;&#x4EE5;&#x4E0D;&#x5199;</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/*&#x7EE7;&#x627F;*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> :</span> <span class="keyword">public</span> Box{};<span class="comment">//&#x57FA;&#x7C7B;&#x7684;&#x8BBF;&#x95EE;&#x5C5E;&#x6027;&#x4E0A;&#x9650;&#x4E3A;public</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> :</span> <span class="keyword">protected</span> Box{};<span class="comment">//&#x57FA;&#x7C7B;&#x7684;&#x8BBF;&#x95EE;&#x5C5E;&#x6027;&#x4E0A;&#x9650;&#x4E3A;protected</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> :</span> <span class="keyword">private</span> Box{};<span class="comment">//&#x57FA;&#x7C7B;&#x7684;&#x8BBF;&#x95EE;&#x5C5E;&#x6027;&#x4E0A;&#x9650;&#x4E3A;private</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span> :</span> <span class="keyword">public</span> Box{</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">getArea</span><span class="params">()</span></span>{</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>-&gt;length*<span class="keyword">this</span>-&gt;getWidth();</span><br><span class="line">        }</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="function">Box <span class="title">box</span><span class="params">(<span class="number">10.0</span>,<span class="number">10.0</span>)</span></span>;<span class="comment">//&#x5BF9;&#x8C61;&#x7684;&#x58F0;&#x660E;&#x6784;&#x9020;</span></span><br></pre></td></tr></table></figure>
+<p>&#x63A5;&#x53E3;&#xFF1A;</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span>{</span></span><br><span class="line">	<span class="keyword">public</span>:      </span><br><span class="line">		<span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">getVolume</span><span class="params">()</span> </span>= <span class="number">0</span>;<span class="comment">// &#x7EAF;&#x865A;&#x51FD;&#x6570;</span></span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="keyword">double</span> length;      <span class="comment">// &#x957F;&#x5EA6;</span></span><br><span class="line">		<span class="keyword">double</span> breadth;     <span class="comment">// &#x5BBD;&#x5EA6;</span></span><br><span class="line">		<span class="keyword">double</span> height;      <span class="comment">// &#x9AD8;&#x5EA6;</span></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span>:</span><span class="keyword">public</span> Box{</span><br><span class="line">	<span class="keyword">public</span>:      </span><br><span class="line">		<span class="function"><span class="keyword">double</span> <span class="title">getVolume</span><span class="params">()</span></span>{</span><br><span class="line">            <span class="keyword">return</span> width * height; </span><br><span class="line">        }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<h2 id="&#x91CD;&#x8F7D;"><a href="#&#x91CD;&#x8F7D;" class="headerlink" title="&#x91CD;&#x8F7D;"></a>&#x91CD;&#x8F7D;</h2><h3 id="&#x51FD;&#x6570;&#x91CD;&#x8F7D;"><a href="#&#x51FD;&#x6570;&#x91CD;&#x8F7D;" class="headerlink" title="&#x51FD;&#x6570;&#x91CD;&#x8F7D;"></a>&#x51FD;&#x6570;&#x91CD;&#x8F7D;</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">printData</span>{</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> i)</span> </span>{</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;&#x6574;&#x6570;&#x4E3A;: &quot;</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">double</span>  f)</span> </span>{</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;&#x6D6E;&#x70B9;&#x6570;&#x4E3A;: &quot;</span> &lt;&lt; f &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">char</span> c[])</span> </span>{</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;&#x5B57;&#x7B26;&#x4E32;&#x4E3A;: &quot;</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    }</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>{</span><br><span class="line">    printData pd;</span><br><span class="line">    <span class="comment">// &#x8F93;&#x51FA;&#x6574;&#x6570;</span></span><br><span class="line">    pd.print(<span class="number">5</span>);</span><br><span class="line">    <span class="comment">// &#x8F93;&#x51FA;&#x6D6E;&#x70B9;&#x6570;</span></span><br><span class="line">    pd.print(<span class="number">500.263</span>);</span><br><span class="line">    <span class="comment">// &#x8F93;&#x51FA;&#x5B57;&#x7B26;&#x4E32;</span></span><br><span class="line">    <span class="keyword">char</span> c[] = <span class="string">&quot;Hello C++&quot;</span>;</span><br><span class="line">    pd.print(c);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;"><a href="#&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;" class="headerlink" title="&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;"></a>&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// &#x91CD;&#x8F7D; + &#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x7528;&#x4E8E;&#x628A;&#x4E24;&#x4E2A; <span class="keyword">Box </span>&#x5BF9;&#x8C61;&#x76F8;&#x52A0;</span><br><span class="line"><span class="keyword">Box </span>operator+(const <span class="keyword">Box&amp; </span><span class="keyword">b){</span></span><br><span class="line"><span class="keyword">	</span><span class="keyword">Box </span><span class="keyword">box;</span></span><br><span class="line"><span class="keyword">	</span><span class="keyword">box.length </span>= this-&gt;length + <span class="keyword">b.length;</span></span><br><span class="line"><span class="keyword">	</span><span class="keyword">box.breadth </span>= this-&gt;<span class="keyword">breadth </span>+ <span class="keyword">b.breadth;</span></span><br><span class="line"><span class="keyword">	</span><span class="keyword">box.height </span>= this-&gt;height + <span class="keyword">b.height;</span></span><br><span class="line"><span class="keyword">	</span>return <span class="keyword">box;</span></span><br><span class="line"><span class="keyword">}</span></span><br></pre></td></tr></table></figure>
+<h2 id="&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x6570;&#x7EC4;"><a href="#&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x6570;&#x7EC4;" class="headerlink" title="&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x6570;&#x7EC4;"></a>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x6570;&#x7EC4;</h2><h3 id="&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x6570;&#x7EC4;"><a href="#&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x6570;&#x7EC4;" class="headerlink" title="&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x6570;&#x7EC4;"></a>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x6570;&#x7EC4;</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">getData</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="keyword">return</span> data;<span class="comment">//data&#x6570;&#x7EC4;&#x5DF2;&#x5728;&#x5176;&#x5BF9;&#x8C61;&#x4E2D;&#x5B58;&#x5728;&#xFF0C;&#x5728;&#x8DF3;&#x51FA;&#x6B64;&#x51FD;&#x6570;&#x4E4B;&#x540E;&#x4E0D;&#x4F1A;&#x6D88;&#x5931;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x672A;&#x5B58;&#x5728;&#x7684;&#x6570;&#x7EC4;"><a href="#&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x672A;&#x5B58;&#x5728;&#x7684;&#x6570;&#x7EC4;" class="headerlink" title="&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x672A;&#x5B58;&#x5728;&#x7684;&#x6570;&#x7EC4;"></a>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x672A;&#x5B58;&#x5728;&#x7684;&#x6570;&#x7EC4;</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getData</span><span class="params">(<span class="keyword">int</span>* data,<span class="keyword">int</span> length)</span></span>{</span><br><span class="line">    <span class="comment">//&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x786E;&#x5B9A;&#x597D;&#x957F;&#x5EA6;&#x7684;&#xFF0C;&#x4F46;&#x672A;&#x5B58;&#x5728;&#x6570;&#x7EC4;</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)</span><br><span class="line">        data[i] = i;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-12-27T15:12:09.708Z" itemprop="dateUpdated">2019-12-27 23:12:09</time>
+</span><br>
+
+
+        
+        原文地址：<a href="/2019/12/25/C++笔记/" target="_blank" rel="external">http://infinitymiao.cn/2019/12/25/C++笔记/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://infinitymiao.cn">
+            <img src="/img/avatar.jpg" alt="InfinityMiao">
+            InfinityMiao
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/2019/12/25/C++笔记/&title=《C++笔记》 — InfinityMiao's Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/2019/12/25/C++笔记/&title=《C++笔记》 — InfinityMiao's Blog&source=InfinityMiao的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/2019/12/25/C++笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《C++笔记》 — InfinityMiao's Blog&url=http://infinitymiao.cn/2019/12/25/C++笔记/&via=http://infinitymiao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/2019/12/25/C++笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/12/17/数据结构/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">数据结构</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>InfinityMiao &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://infinitymiao.cn/2019/12/25/C++笔记/&title=《C++笔记》 — InfinityMiao's Blog&pic=http://infinitymiao.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://infinitymiao.cn/2019/12/25/C++笔记/&title=《C++笔记》 — InfinityMiao's Blog&source=InfinityMiao的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://infinitymiao.cn/2019/12/25/C++笔记/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《C++笔记》 — InfinityMiao's Blog&url=http://infinitymiao.cn/2019/12/25/C++笔记/&via=http://infinitymiao.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://infinitymiao.cn/2019/12/25/C++笔记/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMklEQVR42u3aSw6DMAxF0e5/03QFCffZtFLMZVRVEHIYWPHn88HXBa7V/fs106dalwwZMo5lkM3tX0BevFpztQe+NxkyZLyHsd8ceeX+KfLh0hVkyJAhgyx9EwTxPbUPIUOGDBm1ILi/kxw6ZciQIaOTxPKqF0GSoPyTXFyGDBkHMtLN/fP3T/obMmTIOIpxhRc53vE7SUqMdiVDhozRjGcbkGQ1Xp5L9yNDhozZDBI09+WzpxJOPuSxXFOGDBkvYKR5IgmC6WExHfiQIUPGexidMMpT01rdLG1CyJAhYx6DP8AbkCQ0k+MmD8EyZMiYyqgV/fuFtnS7N//LkCFjNIOHvFpjkjcSOgU+GTJkzGaQB2ql/zSJ3b/9Zm8yZMh4AYMc2njRLU16O0E/6L7KkCFjBKM2vFXbKG8wBH0MGTJkjGb0wyUvk6WpLLpfhgwZoxnpi2tDYHy0Ig33xe8nQ4aMoxi1IJseKNOxsHR0TIYMGbMZ6WgXKbd1RjdITopGLmTIkDGOQcJc2trshNRWe0CGDBmjGbwx2S+x9Qt5y3KbDBkyRjN4UzNNbtPmaNpwlSFDxmxGP1ntlOfSg+Zj+bcMGTKOYvw/cSUjX7zcFsNkyJBxLIMHWc7jK6dDGEFvU4YMGeMYPFDyRLf2T3EgQ4YMGTJwiKwFUBJe0UCYDBkyZOBAXBv84mntTQtThgwZQxm1ZkA/WKfNhgfKbTJkyDiQ0Ukd+VhG2mbgSbIMGTJGM77csyLg2hOOawAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'InfinityMiao's Blog';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'InfinityMiao's Blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
